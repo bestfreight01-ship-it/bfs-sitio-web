@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Best Freight Solutions – BFS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+<div id="app">
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo"></a>
+      <div class="nav-links" id="nav-links"></div>
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <button class="lang-btn" data-lang-btn="en">EN</button>
+          <button class="lang-btn" data-lang-btn="es">ES</button>
+        </div>
+        <button class="nav-cta" id="nav-cta" data-scroll-to="contact"></button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <div id="mobile-menu-links"></div>
+      <a href="#" id="mobile-menu-cta" data-scroll-to="contact"></a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg-img"></div>
+    <div class="hero-accent"></div>
+    <div class="hero-accent2"></div>
+    <div class="hero-inner" id="hero-inner" style="color: rgba(17, 17, 17, 0.294)">
+      <div>
+        <h1 class="hero-title" id="hero-title"></h1>
+        <ul id="hero-sub" style="list-style:none;margin:0 0 36px;padding:0;display:flex;flex-direction:column;gap:10px"></ul>
+        <div class="hero-actions">
+          <button class="btn-secondary" id="hero-cta2" data-scroll-to="services"></button>
+        </div>
+      </div>
+      <div class="hero-image-wrap" style="display:none">
+        <img src="images/7.png" alt="BFS Freight Operations"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-inner">
+      <div class="services-header">
+        <div class="section-label" id="serv-label"></div>
+        <h2 class="section-title" id="serv-title"></h2>
+        <p class="section-desc" id="serv-desc"></p>
+      </div>
+      <div class="services-grid" id="services-grid"></div>
+    </div>
+  </section>
+
+  <!-- PHOTO BANNER -->
+  <div class="photo-banner">
+    <img src="images/Imagen6.png" alt="BFS Operations"/>
+    <div class="photo-banner-overlay">
+      <div class="photo-banner-text">
+        <div class="photo-banner-title" id="banner1-title"></div>
+        <div class="photo-banner-sub" id="banner1-sub"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div>
+          <div class="about-image-wrap">
+            <div class="about-accent"></div>
+            <div class="about-accent2"></div>
+            <img src="images/Imagen7.png" alt="Best Freight Solutions Operations"/>
+          </div>
+        </div>
+        <div>
+          <div class="section-label" id="about-label"></div>
+          <h2 class="section-title" id="about-title"></h2>
+          <p class="section-desc" id="about-desc" style="margin-bottom:0"></p>
+          <div class="about-cards" id="about-cards"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO BANNER 2 -->
+  <div class="photo-banner">
+    <img src="images/8.png" alt="BFS Truck" style="object-position:center 55%"/>
+  </div>
+  <div style="background:#0d2028;padding:28px 24px;text-align:center">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:800;color:white;line-height:1.1;margin-bottom:8px">Conectamos con mejores oportunidades</div>
+    <div style="font-size:16px;color:rgba(255,255,255,0.75)">Opera más eficiente</div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-inner">
+      <div class="testimonials-header">
+        <div class="section-label" id="testi-label"></div>
+        <h2 class="section-title" id="testi-title"></h2>
+        <div style="margin-top:12px">
+          <span style="font-size:15px;color:var(--text-muted)" id="testi-subtitle"></span>
+        </div>
+      </div>
+      <div class="testimonials-grid" id="testimonials-grid"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div>
+          <div class="section-label" id="contact-label"></div>
+          <h2 class="section-title" id="contact-title"></h2>
+          <p class="section-desc" id="contact-desc" style="margin-bottom:36px"></p>
+          <div class="contact-info">
+            <div class="contact-item">
+              <div>
+                <div class="contact-label">WhatsApp</div>
+                <div class="contact-value">Anthony Navarro: 646 980-6428</div>
+                <div class="contact-value">Mariel Valle: 646 980-6362</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div>
+                <div class="contact-label">Email</div>
+                <div class="contact-value">bestfreight01@gmail.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="form-card" id="form-card">
+            <div class="form-title" id="form-title"></div>
+            <form id="quote-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" id="form-label-name"></label>
+                  <input class="form-input" name="name" required/>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" id="form-label-company"></label>
+                  <input class="form-input" name="company"/>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" id="form-label-email"></label>
+                  <input class="form-input" type="email" name="email" required/>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" id="form-label-phone"></label>
+                  <input class="form-input" name="phone"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" id="form-label-message"></label>
+                <textarea class="form-textarea" name="message"></textarea>
+              </div>
+              <button type="submit" class="form-submit" id="form-submit-btn"></button>
+              <div class="form-error" id="form-error" style="display:none"></div>
+            </form>
+            <div class="form-success" id="form-success" style="display:none">
+              <div class="form-success-icon">✅</div>
+              <div class="form-success-title" id="form-success-title"></div>
+              <p class="form-success-text" id="form-success-text"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <div class="footer-copy" id="footer-copy"></div>
+        <div class="footer-badge">✦ Best Freight Solutions</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
