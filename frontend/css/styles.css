@@ -88,6 +88,7 @@ body { font-family: 'Inter', sans-serif; background: #f8f9fa; color: #1a1a1a; ov
   padding: 8px 24px 20px;
 }
 .mobile-menu a {
+  display: block;
   color: rgba(255,255,255,0.85); text-decoration: none;
   font-size: 17px; font-weight: 500; padding: 14px 0;
   border-bottom: 1px solid rgba(255,255,255,0.08);
