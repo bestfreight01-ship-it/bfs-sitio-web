@@ -187,8 +187,7 @@ function render() {
   document.querySelectorAll('[data-scroll-to]').forEach((el) => {
     el.onclick = (e) => {
       e.preventDefault();
-      document.getElementById('mobile-menu').classList.remove('open');
-      document.getElementById('nav-toggle').classList.remove('open');
+      toggleMobileMenu(false);
       scrollTo(el.dataset.scrollTo);
     };
   });
@@ -208,9 +207,20 @@ window.addEventListener('scroll', () => {
   document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
 });
 
-document.getElementById('nav-toggle').addEventListener('click', () => {
-  document.getElementById('nav-toggle').classList.toggle('open');
-  document.getElementById('mobile-menu').classList.toggle('open');
+function toggleMobileMenu(force) {
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const open = force !== undefined ? force : !menu.classList.contains('open');
+  toggle.classList.toggle('open', open);
+  menu.classList.toggle('open', open);
+  toggle.setAttribute('aria-expanded', open);
+  menu.setAttribute('aria-hidden', !open);
+}
+
+document.getElementById('nav-toggle').addEventListener('click', () => toggleMobileMenu());
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') toggleMobileMenu(false);
 });
 
 document.querySelectorAll('.hero-inner, .services-header, .about-grid, .testimonials-header, .contact-grid').forEach((el) => {
