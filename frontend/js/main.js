@@ -102,9 +102,11 @@ const imgPos = ['center 30%', 'center 20%', 'center 60%', 'center 40%'];
 
 let lang = localStorage.getItem('bfs-lang') || 'en';
 
-function scrollTo(id) {
+function scrollToSection(id) {
   const el = document.getElementById(id);
-  if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
+  if (!el) return;
+  const top = el.getBoundingClientRect().top + window.pageYOffset - 80;
+  window.scrollTo({ top, behavior: 'smooth' });
 }
 
 function render() {
@@ -188,7 +190,7 @@ function render() {
     el.onclick = (e) => {
       e.preventDefault();
       toggleMobileMenu(false);
-      scrollTo(el.dataset.scrollTo);
+      scrollToSection(el.dataset.scrollTo);
     };
   });
 }
