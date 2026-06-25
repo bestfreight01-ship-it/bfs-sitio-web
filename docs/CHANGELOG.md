@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-06-25 (navegación)
+- Corregido bug crítico de navegación: la función global `scrollTo` sobreescribía `window.scrollTo`, causando que todos los clicks en nav links y botones fallaran silenciosamente sin hacer scroll.
+- Renombrada a `scrollToSection` y actualizada para usar `getBoundingClientRect()` en vez de `offsetTop` para mayor precisión.
+- Afectaba: Services, About, Contact en navbar, botón "Get a Quote", botón "Learn More" y menú mobile (hamburguesa) — todos ahora funcionan correctamente en desktop y mobile.
+
 ## 2026-06-25
 - Repositorio subido a GitHub (`bestfreight01-ship-it/bfs-sitio-web`), rama `main` como default.
 - Frontend desplegado en Vercel (`https://bfs-sitio-web.vercel.app`), root directory configurado en `frontend/`.
