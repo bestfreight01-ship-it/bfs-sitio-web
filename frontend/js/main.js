@@ -97,7 +97,7 @@ const content = {
   }
 };
 
-const cardImgs = ['images/Imagen2.png', 'images/Imagen3-9fd2565e.png', 'images/Imagen4.png', 'images/5.png'];
+const cardImgs = ['images/Imagen2.webp', 'images/Imagen3-9fd2565e.webp', 'images/Imagen4.webp', 'images/5.webp'];
 const imgPos = ['center 30%', 'center 20%', 'center 60%', 'center 40%'];
 
 let lang = localStorage.getItem('bfs-lang') || 'en';
