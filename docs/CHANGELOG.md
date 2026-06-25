@@ -8,6 +8,8 @@
 - `BACKEND_URL` en `frontend/js/main.js` actualizado para apuntar al backend en Railway.
 - Implementado envío de email al recibir una cotización usando SendGrid (plan gratuito). El email se envía en segundo plano para que el formulario responda de forma instantánea.
 - Variables de entorno en Railway: `SENDGRID_API_KEY`, `FROM_EMAIL`, `NOTIFY_EMAIL`.
+- Imágenes convertidas de PNG a WebP (~93% de reducción de peso, de ~20MB a ~1.5MB en total).
+- Mejoras de accesibilidad: `aria-label` en logo del nav, `aria-expanded`/`aria-hidden` en menú mobile, cierre con tecla Escape, labels del formulario correctamente asociados a sus inputs con `for`/`id`.
 
 ## 2026-06-18
 - Migración completa desde el export del constructor visual (`index.html` monolítico con React+Babel vía CDN) a un monorepo `frontend/` (HTML/CSS/JS vanilla) + `backend/` (FastAPI).
