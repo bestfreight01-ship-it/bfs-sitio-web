@@ -2,7 +2,7 @@
 
 ## Backend / datos
 - [ ] Persistir las solicitudes de `/api/quote` (archivo o, mejor, base de datos Postgres) — hoy solo se loggean.
-- [ ] Envío real de email/notificación al recibir una cotización (SMTP o proveedor transaccional).
+- [x] Envío real de email/notificación al recibir una cotización — implementado con SendGrid (2026-06-25).
 - [ ] Base de datos (Postgres) cuando se necesite para CRM/login.
 - [ ] Login/autenticación (si se necesita panel interno o portal de clientes).
 - [ ] CRM básico (listado y seguimiento de leads/cotizaciones recibidas).
@@ -13,6 +13,6 @@
 - [ ] Revisar accesibilidad (alt text, contraste, navegación por teclado del menú mobile).
 
 ## Infra
-- [ ] Conectar GitHub → Vercel (deploy automático del frontend).
-- [ ] Conectar GitHub → Railway/Render (deploy automático del backend).
+- [x] Conectar GitHub → Vercel (deploy automático del frontend) — live en bfs-sitio-web.vercel.app (2026-06-25).
+- [x] Conectar GitHub → Railway (deploy automático del backend) — live en bfs-sitio-web-production.up.railway.app (2026-06-25).
 - [ ] Configurar dominio propio si aplica.
