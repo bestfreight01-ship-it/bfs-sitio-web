@@ -4,7 +4,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-from fastapi import APIRouter
+from fastapi import APIRouter, BackgroundTasks
 from pydantic import BaseModel, EmailStr
 
 logger = logging.getLogger("bfs.quote")
@@ -52,10 +52,7 @@ Mensaje:  {quote.message or "—"}
 
 
 @router.post("/quote")
-def create_quote(quote: QuoteRequest):
+def create_quote(quote: QuoteRequest, background_tasks: BackgroundTasks):
     logger.info("New quote request: %s", quote.model_dump())
-    try:
-        _send_notification(quote)
-    except Exception:
-        logger.exception("Failed to send email notification")
+    background_tasks.add_task(_send_notification, quote)
     return {"status": "ok"}
