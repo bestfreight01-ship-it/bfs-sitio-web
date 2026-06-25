@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-06-25 (mobile menu layout)
+- Corregido layout del menú mobile: los `<a>` dentro de `#mobile-menu-links` eran `display: inline` por defecto, causando que Services/About/Contact se renderizaran en una sola línea. Agregado `display: block` al CSS para que se apilen correctamente.
+
 ## 2026-06-25 (navegación)
 - Corregido bug crítico de navegación: la función global `scrollTo` sobreescribía `window.scrollTo`, causando que todos los clicks en nav links y botones fallaran silenciosamente sin hacer scroll.
 - Renombrada a `scrollToSection` y actualizada para usar `getBoundingClientRect()` en vez de `offsetTop` para mayor precisión.
