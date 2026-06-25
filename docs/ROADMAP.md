@@ -8,9 +8,9 @@
 - [ ] CRM básico (listado y seguimiento de leads/cotizaciones recibidas).
 
 ## Frontend
-- [ ] Optimizar/comprimir las imágenes usadas (`frontend/images/`) — varias pesan >2MB sin compresión.
+- [x] Optimizar/comprimir las imágenes usadas — convertidas a WebP (~93% de reducción, ~20MB → ~1.5MB) (2026-06-25).
 - [ ] Evaluar migrar a Vite si la complejidad de UI crece y vanilla JS deja de ser cómodo.
-- [ ] Revisar accesibilidad (alt text, contraste, navegación por teclado del menú mobile).
+- [x] Revisar accesibilidad — ARIA labels, aria-expanded/aria-hidden en menú mobile, cierre con Escape, labels de formulario asociados correctamente (2026-06-25).
 
 ## Infra
 - [x] Conectar GitHub → Vercel (deploy automático del frontend) — live en bfs-sitio-web.vercel.app (2026-06-25).
