@@ -1,11 +1,10 @@
 import logging
 import os
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 
+import sendgrid
 from fastapi import APIRouter, BackgroundTasks
 from pydantic import BaseModel, EmailStr
+from sendgrid.helpers.mail import Mail
 
 logger = logging.getLogger("bfs.quote")
 
@@ -21,11 +20,11 @@ class QuoteRequest(BaseModel):
 
 
 def _send_notification(quote: QuoteRequest):
-    gmail_user = os.getenv("GMAIL_USER")
-    gmail_password = os.getenv("GMAIL_APP_PASSWORD")
-    notify_email = os.getenv("NOTIFY_EMAIL", gmail_user)
+    api_key = os.getenv("SENDGRID_API_KEY")
+    from_email = os.getenv("FROM_EMAIL")
+    notify_email = os.getenv("NOTIFY_EMAIL")
 
-    if not gmail_user or not gmail_password:
+    if not api_key or not from_email or not notify_email:
         logger.warning("Email not configured — skipping notification")
         return
 
@@ -38,16 +37,15 @@ Teléfono: {quote.phone or "—"}
 Mensaje:  {quote.message or "—"}
 """
 
-    msg = MIMEMultipart()
-    msg["From"] = gmail_user
-    msg["To"] = notify_email
-    msg["Subject"] = f"Nueva cotización BFS — {quote.name}"
-    msg.attach(MIMEText(body, "plain", "utf-8"))
+    message = Mail(
+        from_email=from_email,
+        to_emails=notify_email,
+        subject=f"Nueva cotización BFS — {quote.name}",
+        plain_text_content=body,
+    )
 
-    with smtplib.SMTP("smtp.gmail.com", 587) as server:
-        server.starttls()
-        server.login(gmail_user, gmail_password)
-        server.sendmail(gmail_user, notify_email, msg.as_string())
+    sg = sendgrid.SendGridAPIClient(api_key=api_key)
+    sg.send(message)
     logger.info("Notification sent for %s", quote.email)
 
 
