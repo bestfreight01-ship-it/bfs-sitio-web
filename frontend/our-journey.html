@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Journey – Best Freight Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+<div id="app">
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Best Freight Solutions — Home"></a>
+      <div class="nav-links" id="nav-links"></div>
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <button class="lang-btn" data-lang-btn="en">EN</button>
+          <button class="lang-btn" data-lang-btn="es">ES</button>
+        </div>
+        <button class="nav-cta" id="nav-cta" data-scroll-to="contact"></button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div id="mobile-menu-links"></div>
+      <a href="#" id="mobile-menu-cta" data-scroll-to="contact"></a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="journey-page-hero">
+    <div class="journey-hero-accent"></div>
+    <div class="section-inner journey-hero-inner">
+      <div class="section-label auth-label-gold" id="jp-label"></div>
+      <h1 class="journey-page-title" id="jp-title"></h1>
+      <p class="section-desc journey-hero-desc" id="jp-desc"></p>
+    </div>
+  </div>
+
+  <!-- AUTHORITY -->
+  <section id="authority">
+    <div class="auth-stats-belt">
+      <div class="section-inner">
+        <div class="auth-stats-grid" id="auth-stats-grid"></div>
+      </div>
+    </div>
+    <div class="auth-journey-wrap">
+      <div class="section-inner">
+        <div class="auth-section-header">
+          <div class="section-label" id="auth-journey-label"></div>
+          <h2 class="section-title" id="auth-journey-title"></h2>
+          <p class="section-desc" id="auth-journey-desc"></p>
+        </div>
+        <div class="auth-timeline" id="auth-timeline"></div>
+      </div>
+    </div>
+    <div class="auth-trust-wrap">
+      <div class="section-inner">
+        <div class="auth-trust-grid">
+          <div>
+            <div class="section-label" id="auth-trust-label"></div>
+            <h2 class="section-title" id="auth-trust-title"></h2>
+            <div class="auth-trust-list" id="auth-trust-list"></div>
+          </div>
+          <div class="auth-philosophy" id="auth-philosophy"></div>
+        </div>
+      </div>
+    </div>
+    <div class="auth-brokers-wrap">
+      <div class="section-inner">
+        <div class="auth-brokers-header">
+          <div class="section-label auth-label-gold" id="auth-brokers-label"></div>
+          <h2 class="section-title auth-title-white" id="auth-brokers-title"></h2>
+          <p class="section-desc auth-desc-muted" id="auth-brokers-desc"></p>
+        </div>
+        <div class="auth-brokers-grid" id="auth-brokers-grid"></div>
+        <div class="auth-brokers-footer-row" id="auth-brokers-footer-row"></div>
+      </div>
+    </div>
+    <div class="auth-community-wrap">
+      <div class="section-inner">
+        <div class="auth-community-grid">
+          <div class="auth-community-text">
+            <div class="section-label" id="auth-comm-label"></div>
+            <h2 class="section-title" id="auth-comm-title"></h2>
+            <p class="section-desc" id="auth-comm-desc"></p>
+            <div class="auth-comm-tags" id="auth-comm-tags"></div>
+          </div>
+          <div class="auth-community-card" id="auth-comm-card"></div>
+        </div>
+      </div>
+    </div>
+    <div class="auth-cta-wrap">
+      <div class="section-inner">
+        <div class="auth-cta-inner" id="auth-cta-inner"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <div class="footer-copy" id="footer-copy"></div>
+        <div class="footer-badge">✦ Best Freight Solutions</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -47,6 +47,10 @@ const content = {
     banner1Title: "Real Results on Every Load",
     banner1Sub: "Optimization, negotiation and precise execution on every move.",
     footerCopy: "© 2026 Best Freight Solutions. All rights reserved.",
+    navJourney: "Our Journey",
+    jpLabel: "Best Freight Solutions",
+    jpTitle: ["Our Track Record & ", "Company Story"],
+    jpDesc: "5+ years. 5,000+ loads. $6M+ in secured freight revenue. The numbers, the relationships, and the values behind every mile we've coordinated.",
     authStatsLabels: ["Loads Dispatched", "Freight Revenue Secured", "Miles Coordinated", "Broker Connections", "Recurring Partners"],
     authJourneyLabel: "Our Journey",
     authJourneyTitle: ["Growing Since ", "2021"],
@@ -148,6 +152,10 @@ const content = {
     banner1Title: "Resultados Reales en Cada Carga",
     banner1Sub: "Optimización, negociación y ejecución precisa en cada movimiento",
     footerCopy: "© 2026 Best Freight Solutions. Todos los derechos reservados.",
+    navJourney: "Nuestra Trayectoria",
+    jpLabel: "Best Freight Solutions",
+    jpTitle: ["Nuestra Trayectoria & ", "Historia de la Empresa"],
+    jpDesc: "5+ años. 5,000+ cargas. $6M+ en freight revenue asegurado. Los números, las relaciones y los valores detrás de cada milla coordinada.",
     authStatsLabels: ["Cargas Despachadas", "Revenue Asegurado", "Millas Coordinadas", "Conexiones con Brokers", "Socios Recurrentes"],
     authJourneyLabel: "Nuestra Trayectoria",
     authJourneyTitle: ["Creciendo Desde ", "2021"],
@@ -238,6 +246,7 @@ function animateCounter(el) {
 }
 
 function initAuthority() {
+  if (!document.getElementById('auth-stats-grid')) return;
   const c = content[lang];
 
   document.getElementById('auth-stats-grid').innerHTML = AUTH_STATS.map((s, i) => `
@@ -371,78 +380,97 @@ function scrollToSection(id) {
 
 function render() {
   const c = content[lang];
+  const isHome = !!document.getElementById('hero-title');
   document.documentElement.lang = lang;
 
   document.querySelectorAll('[data-lang-btn]').forEach((btn) => {
     btn.classList.toggle('active', btn.dataset.langBtn === lang);
   });
 
+  // Nav: section links + Our Journey; cross-page hrefs on non-home pages
   const sectionIds = ['services', 'about', 'contact'];
-  document.getElementById('nav-links').innerHTML = c.navLinks
-    .map((l, i) => `<a href="#" data-scroll-to="${sectionIds[i]}">${l}</a>`).join('');
-  document.getElementById('mobile-menu-links').innerHTML = c.navLinks
-    .map((l, i) => `<a href="#" data-scroll-to="${sectionIds[i]}">${l}</a>`).join('');
+  const sectionLinks = c.navLinks.map((l, i) =>
+    isHome
+      ? `<a href="#" data-scroll-to="${sectionIds[i]}">${l}</a>`
+      : `<a href="/#${sectionIds[i]}">${l}</a>`
+  ).join('');
+  const journeyLink = isHome
+    ? `<a href="our-journey">${c.navJourney}</a>`
+    : `<a href="/" class="nav-link-active">${c.navJourney}</a>`;
+  const navHtml = sectionLinks + journeyLink;
+  document.getElementById('nav-links').innerHTML = navHtml;
+  document.getElementById('mobile-menu-links').innerHTML = navHtml;
   document.getElementById('nav-cta').textContent = c.navCta;
   document.getElementById('mobile-menu-cta').textContent = c.navCta;
 
-  document.getElementById('hero-title').innerHTML =
-    `${c.heroTitle[0]}<span>${c.heroTitle[1]}</span><br>${c.heroTitle[2]}<span>${c.heroTitle[3]}</span>`;
-  document.getElementById('hero-sub').innerHTML = c.heroSub
-    .map((item) => `<li style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.85);font-size:16px"><span style="color:var(--green);font-weight:700;font-size:18px">✓</span> ${item}</li>`)
-    .join('');
-  document.getElementById('hero-cta2').textContent = c.heroCta2;
+  if (isHome) {
+    document.getElementById('hero-title').innerHTML =
+      `${c.heroTitle[0]}<span>${c.heroTitle[1]}</span><br>${c.heroTitle[2]}<span>${c.heroTitle[3]}</span>`;
+    document.getElementById('hero-sub').innerHTML = c.heroSub
+      .map((item) => `<li style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.85);font-size:16px"><span style="color:var(--green);font-weight:700;font-size:18px">✓</span> ${item}</li>`)
+      .join('');
+    document.getElementById('hero-cta2').textContent = c.heroCta2;
 
-  document.getElementById('serv-label').textContent = c.servLabel;
-  document.getElementById('serv-title').innerHTML = `${c.servTitle[0]}<span>${c.servTitle[1]}</span>`;
-  document.getElementById('serv-desc').textContent = c.servDesc;
-  document.getElementById('services-grid').innerHTML = c.services.map((s, i) => `
-    <div class="service-card">
-      <img src="${cardImgs[i]}" alt="${s.title}" class="service-card-photo" style="object-position:${imgPos[i]}"/>
-      <div class="service-card-body">
-        <div class="service-card-header"><div class="service-title">${s.title}</div></div>
-        <p class="service-desc">${s.desc}</p>
-      </div>
-    </div>`).join('');
-
-  document.getElementById('banner1-title').textContent = c.banner1Title;
-  document.getElementById('banner1-sub').textContent = c.banner1Sub;
-
-  document.getElementById('about-label').textContent = c.aboutLabel;
-  document.getElementById('about-title').innerHTML = `${c.aboutTitle[0]}<span>${c.aboutTitle[1]}</span>`;
-  document.getElementById('about-desc').textContent = c.aboutDesc;
-  document.getElementById('about-cards').innerHTML = [c.mission, c.vision, c.focus].map((item) => `
-    <div class="about-card">
-      <div class="about-card-title">${item.title}</div>
-      <p class="about-card-text">${item.text}</p>
-    </div>`).join('');
-
-  document.getElementById('testi-label').textContent = c.testiLabel;
-  document.getElementById('testi-title').innerHTML = `${c.testiTitle[0]}<span>${c.testiTitle[1]}</span>`;
-  document.getElementById('testi-subtitle').textContent = c.testiSubtitle;
-  document.getElementById('testimonials-grid').innerHTML = c.testimonials.map((t) => `
-    <div class="testimonial-card">
-      <p class="testimonial-text">"${t.text}"</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">${t.name[0]}</div>
-        <div>
-          <div class="author-name">${t.name}</div>
-          <div class="author-role">${t.role}</div>
+    document.getElementById('serv-label').textContent = c.servLabel;
+    document.getElementById('serv-title').innerHTML = `${c.servTitle[0]}<span>${c.servTitle[1]}</span>`;
+    document.getElementById('serv-desc').textContent = c.servDesc;
+    document.getElementById('services-grid').innerHTML = c.services.map((s, i) => `
+      <div class="service-card">
+        <img src="${cardImgs[i]}" alt="${s.title}" class="service-card-photo" style="object-position:${imgPos[i]}"/>
+        <div class="service-card-body">
+          <div class="service-card-header"><div class="service-title">${s.title}</div></div>
+          <p class="service-desc">${s.desc}</p>
         </div>
-      </div>
-    </div>`).join('');
+      </div>`).join('');
 
-  document.getElementById('contact-label').textContent = c.contactLabel;
-  document.getElementById('contact-title').innerHTML = `${c.contactTitle[0]}<span>${c.contactTitle[1]}</span>`;
-  document.getElementById('contact-desc').textContent = c.contactDesc;
-  document.getElementById('form-title').textContent = c.formTitle;
-  document.getElementById('form-label-name').textContent = c.formName;
-  document.getElementById('form-label-company').textContent = c.formCompany;
-  document.getElementById('form-label-email').textContent = c.formEmail;
-  document.getElementById('form-label-phone').textContent = c.formPhone;
-  document.getElementById('form-label-message').textContent = c.formMsg;
-  document.getElementById('form-submit-btn').textContent = c.formSubmit;
-  document.getElementById('form-success-title').textContent = c.formSuccess.title;
-  document.getElementById('form-success-text').textContent = c.formSuccess.text;
+    document.getElementById('banner1-title').textContent = c.banner1Title;
+    document.getElementById('banner1-sub').textContent = c.banner1Sub;
+
+    document.getElementById('about-label').textContent = c.aboutLabel;
+    document.getElementById('about-title').innerHTML = `${c.aboutTitle[0]}<span>${c.aboutTitle[1]}</span>`;
+    document.getElementById('about-desc').textContent = c.aboutDesc;
+    document.getElementById('about-cards').innerHTML = [c.mission, c.vision, c.focus].map((item) => `
+      <div class="about-card">
+        <div class="about-card-title">${item.title}</div>
+        <p class="about-card-text">${item.text}</p>
+      </div>`).join('');
+
+    document.getElementById('testi-label').textContent = c.testiLabel;
+    document.getElementById('testi-title').innerHTML = `${c.testiTitle[0]}<span>${c.testiTitle[1]}</span>`;
+    document.getElementById('testi-subtitle').textContent = c.testiSubtitle;
+    document.getElementById('testimonials-grid').innerHTML = c.testimonials.map((t) => `
+      <div class="testimonial-card">
+        <p class="testimonial-text">"${t.text}"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">${t.name[0]}</div>
+          <div>
+            <div class="author-name">${t.name}</div>
+            <div class="author-role">${t.role}</div>
+          </div>
+        </div>
+      </div>`).join('');
+
+    document.getElementById('contact-label').textContent = c.contactLabel;
+    document.getElementById('contact-title').innerHTML = `${c.contactTitle[0]}<span>${c.contactTitle[1]}</span>`;
+    document.getElementById('contact-desc').textContent = c.contactDesc;
+    document.getElementById('form-title').textContent = c.formTitle;
+    document.getElementById('form-label-name').textContent = c.formName;
+    document.getElementById('form-label-company').textContent = c.formCompany;
+    document.getElementById('form-label-email').textContent = c.formEmail;
+    document.getElementById('form-label-phone').textContent = c.formPhone;
+    document.getElementById('form-label-message').textContent = c.formMsg;
+    document.getElementById('form-submit-btn').textContent = c.formSubmit;
+    document.getElementById('form-success-title').textContent = c.formSuccess.title;
+    document.getElementById('form-success-text').textContent = c.formSuccess.text;
+  }
+
+  // Journey page header (only on our-journey.html)
+  const jpTitle = document.getElementById('jp-title');
+  if (jpTitle) {
+    document.getElementById('jp-label').textContent = c.jpLabel;
+    jpTitle.innerHTML = `${c.jpTitle[0]}<span>${c.jpTitle[1]}</span>`;
+    document.getElementById('jp-desc').textContent = c.jpDesc;
+  }
 
   document.getElementById('footer-copy').textContent = c.footerCopy;
 
@@ -452,7 +480,11 @@ function render() {
     el.onclick = (e) => {
       e.preventDefault();
       toggleMobileMenu(false);
-      scrollToSection(el.dataset.scrollTo);
+      if (isHome) {
+        scrollToSection(el.dataset.scrollTo);
+      } else {
+        window.location.href = '/#' + el.dataset.scrollTo;
+      }
     };
   });
 }
@@ -502,6 +534,8 @@ document.querySelectorAll('.hero-inner, .services-header, .about-grid, .testimon
 });
 
 const form = document.getElementById('quote-form');
+
+if (form) {
 const formError = document.getElementById('form-error');
 const submitBtn = document.getElementById('form-submit-btn');
 
@@ -531,5 +565,6 @@ form.addEventListener('submit', async (e) => {
     submitBtn.textContent = c.formSubmit;
   }
 });
+} // end if (form)
 
 render();

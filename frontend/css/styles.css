@@ -841,3 +841,38 @@ section { padding: 96px 0; }
   .auth-philosophy { padding: 36px 28px; }
   .auth-community-card { padding: 36px 28px; }
 }
+
+/* ── Journey Page ── */
+.journey-page-hero {
+  background: linear-gradient(135deg, #0a1e25 0%, #1a3d47 60%, #1e4d40 100%);
+  padding: 140px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+.journey-page-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(45,138,122,0.12) 0%, transparent 65%);
+}
+.journey-hero-accent {
+  position: absolute; right: -80px; top: -80px;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,166,35,0.06) 0%, transparent 70%);
+}
+.journey-hero-inner { position: relative; z-index: 1; }
+.journey-page-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  color: white;
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+.journey-page-title span { color: var(--gold); }
+.journey-hero-desc {
+  color: rgba(255,255,255,0.6) !important;
+  max-width: 600px;
+  font-size: 17px;
+}
+.nav-link-active { color: var(--gold) !important; }
+.nav-link-active::after { transform: scaleX(1) !important; background: var(--gold) !important; }

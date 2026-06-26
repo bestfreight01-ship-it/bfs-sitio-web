@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-06-26 (Our Journey — página separada)
+- Movida la sección `#authority` fuera de `index.html` hacia una nueva página independiente: `frontend/our-journey.html`.
+- Nueva página accesible en `/our-journey` (Vercel `cleanUrls: true` mapea `our-journey.html` → `/our-journey`).
+- Agregado enlace "Our Journey" / "Nuestra Trayectoria" en la navbar desktop y mobile de ambas páginas.
+- En la página journey, el enlace aparece en dorado (`.nav-link-active`) indicando la página activa.
+- Nuevo page hero en `our-journey.html`: gradiente oscuro con título bilingüe "Our Track Record & Company Story".
+- `main.js` actualizado: detección de página via `isHome = !!document.getElementById('hero-title')`, guards para elementos home-only, cross-page navigation (links de sección usan `/#section` desde la página journey), guard para el form event listener.
+- CSS: agregadas clases `.journey-page-hero` y `.nav-link-active`.
+- Home principal sin cambios: mismas secciones, misma funcionalidad.
+
 ## 2026-06-26 (Authority Section — nueva sección premium)
 - Agregada sección `#authority` entre el segundo photo banner y los testimonios. Contiene 6 subsecciones:
   1. **Stats Belt**: 5 métricas animadas con contadores (5,000+ Loads / $6M+ Revenue / 1.9M+ Miles / 1,000+ Brokers / 85+ Recurring), fondo oscuro (#0a1e25), números en gold.
