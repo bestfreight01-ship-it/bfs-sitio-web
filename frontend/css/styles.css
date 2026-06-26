@@ -846,7 +846,7 @@ section { padding: 96px 0; }
 .journey-page-hero {
   background-image: url('../images/our-journey-hero.png');
   background-size: cover;
-  background-position: center center;
+  background-position: center bottom;
   background-repeat: no-repeat;
   padding: 140px 0 80px;
   min-height: 420px;
@@ -873,7 +873,7 @@ section { padding: 96px 0; }
 .journey-hero-inner { position: relative; z-index: 2; }
 @media (max-width: 768px) {
   .journey-page-hero {
-    background-position: center top;
+    background-position: 65% bottom;
     padding: 120px 0 60px;
     min-height: 320px;
   }
