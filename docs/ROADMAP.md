@@ -11,6 +11,9 @@
 - [x] Optimizar/comprimir las imágenes usadas — convertidas a WebP (~93% de reducción, ~20MB → ~1.5MB) (2026-06-25).
 - [ ] Evaluar migrar a Vite si la complejidad de UI crece y vanilla JS deja de ser cómodo.
 - [x] Revisar accesibilidad — ARIA labels, aria-expanded/aria-hidden en menú mobile, cierre con Escape, labels de formulario asociados correctamente (2026-06-25).
+- [x] Página dedicada `/our-journey` — Authority Section (Stats Belt, Timeline, Trust, Brokers, Community, CTA) separada del Home (2026-06-26).
+- [x] Navbar reorganizado — dropdown "Company" agrupa Services/About/Contact; "Our Journey" como link independiente con estado activo en dorado (2026-06-26).
+- [x] Hero Section de Our Journey — fondo reemplazado por imagen real de camión + skyline con overlay oscuro premium y responsive behavior (2026-06-26).
 
 ## Infra
 - [x] Conectar GitHub → Vercel (deploy automático del frontend) — live en bfs-sitio-web.vercel.app (2026-06-25).
