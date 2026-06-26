@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-06-26 (Our Journey — hero image)
+- Reemplazado el fondo CSS degradado de la Hero Section de `/our-journey` por la imagen real `our-journey-hero.png` (camión + skyline urbano), almacenada en `frontend/images/`.
+- Overlay oscuro conservado vía `::before` con gradiente `rgba(10,30,37,0.82)` para mantener legibilidad del texto.
+- `background-size: cover` + `background-position: center center` para encuadre premium en cualquier resolución.
+- `min-height: 420px` añadido al hero; en mobile (≤768px) se ajusta a `center top` y padding reducido a `120px 0 60px`.
+- Z-index explícito: overlay `z-index: 0`, acento dorado `z-index: 1`, contenido de texto `z-index: 2`.
+- Sin cambios en estructura HTML, navegación ni otras secciones.
+
 ## 2026-06-26 (Navbar — dropdown "Company / Empresa")
 - Agrupados "Services / About / Contact" dentro de un dropdown con label "Company" (EN) / "Empresa" (ES).
 - "Our Journey" / "Nuestra Trayectoria" se mantiene como botón independiente (página separada).
