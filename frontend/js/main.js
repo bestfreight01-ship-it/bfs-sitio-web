@@ -47,6 +47,7 @@ const content = {
     banner1Title: "Real Results on Every Load",
     banner1Sub: "Optimization, negotiation and precise execution on every move.",
     footerCopy: "© 2026 Best Freight Solutions. All rights reserved.",
+    navDropdownLabel: "Company",
     navJourney: "Our Journey",
     jpLabel: "Best Freight Solutions",
     jpTitle: ["Our Track Record & ", "Company Story"],
@@ -152,6 +153,7 @@ const content = {
     banner1Title: "Resultados Reales en Cada Carga",
     banner1Sub: "Optimización, negociación y ejecución precisa en cada movimiento",
     footerCopy: "© 2026 Best Freight Solutions. Todos los derechos reservados.",
+    navDropdownLabel: "Empresa",
     navJourney: "Nuestra Trayectoria",
     jpLabel: "Best Freight Solutions",
     jpTitle: ["Nuestra Trayectoria & ", "Historia de la Empresa"],
@@ -387,9 +389,9 @@ function render() {
     btn.classList.toggle('active', btn.dataset.langBtn === lang);
   });
 
-  // Nav: section links + Our Journey; cross-page hrefs on non-home pages
+  // Nav: dropdown grouping home sections + standalone journey link
   const sectionIds = ['services', 'about', 'contact'];
-  const sectionLinks = c.navLinks.map((l, i) =>
+  const dropdownItems = c.navLinks.map((l, i) =>
     isHome
       ? `<a href="#" data-scroll-to="${sectionIds[i]}">${l}</a>`
       : `<a href="/#${sectionIds[i]}">${l}</a>`
@@ -397,9 +399,13 @@ function render() {
   const journeyLink = isHome
     ? `<a href="our-journey">${c.navJourney}</a>`
     : `<a href="/" class="nav-link-active">${c.navJourney}</a>`;
-  const navHtml = sectionLinks + journeyLink;
-  document.getElementById('nav-links').innerHTML = navHtml;
-  document.getElementById('mobile-menu-links').innerHTML = navHtml;
+  document.getElementById('nav-links').innerHTML =
+    `<div class="nav-dropdown" id="nav-dropdown">` +
+    `<button class="nav-dropdown-btn" id="nav-dropdown-btn" aria-haspopup="true" aria-expanded="false">` +
+    `${c.navDropdownLabel}<span class="nav-dropdown-arrow">▾</span></button>` +
+    `<div class="nav-dropdown-menu" role="menu">${dropdownItems}</div></div>` +
+    journeyLink;
+  document.getElementById('mobile-menu-links').innerHTML = dropdownItems + journeyLink;
   document.getElementById('nav-cta').textContent = c.navCta;
   document.getElementById('mobile-menu-cta').textContent = c.navCta;
 
@@ -516,8 +522,34 @@ function toggleMobileMenu(force) {
 document.getElementById('nav-toggle').addEventListener('click', () => toggleMobileMenu());
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') toggleMobileMenu(false);
+  if (e.key === 'Escape') {
+    toggleMobileMenu(false);
+    closeDropdown();
+  }
 });
+
+function closeDropdown() {
+  const dd = document.getElementById('nav-dropdown');
+  if (!dd) return;
+  dd.classList.remove('open');
+  const btn = dd.querySelector('.nav-dropdown-btn');
+  if (btn) btn.setAttribute('aria-expanded', 'false');
+}
+
+// Dropdown toggle — delegated on nav to survive innerHTML replacement in render()
+document.getElementById('nav').addEventListener('click', (e) => {
+  const btn = e.target.closest('#nav-dropdown-btn');
+  if (!btn) return;
+  const dd = document.getElementById('nav-dropdown');
+  if (!dd) return;
+  const open = !dd.classList.contains('open');
+  dd.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open);
+  e.stopPropagation();
+});
+
+// Close dropdown on outside click
+document.addEventListener('click', closeDropdown);
 
 document.querySelectorAll('.hero-inner, .services-header, .about-grid, .testimonials-header, .contact-grid').forEach((el) => {
   el.style.opacity = 0;

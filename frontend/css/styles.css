@@ -876,3 +876,55 @@ section { padding: 96px 0; }
 }
 .nav-link-active { color: var(--gold) !important; }
 .nav-link-active::after { transform: scaleX(1) !important; background: var(--gold) !important; }
+
+/* ── Nav Dropdown ── */
+.nav-dropdown { position: relative; display: flex; align-items: center; }
+.nav-dropdown-btn {
+  background: none; border: none; cursor: pointer; padding: 0;
+  color: rgba(255,255,255,0.8); font-family: 'Inter', sans-serif;
+  font-size: 14px; font-weight: 500; letter-spacing: 0.02em;
+  display: flex; align-items: center; gap: 5px;
+  transition: color 0.2s; position: relative;
+}
+.nav-dropdown-btn::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 2px; background: var(--gold); transform: scaleX(0);
+  transition: transform 0.2s; transform-origin: left;
+}
+.nav-dropdown:hover .nav-dropdown-btn,
+.nav-dropdown.open .nav-dropdown-btn { color: #fff; }
+.nav-dropdown:hover .nav-dropdown-btn::after,
+.nav-dropdown.open .nav-dropdown-btn::after { transform: scaleX(1); }
+.nav-dropdown-arrow {
+  font-size: 9px; display: inline-block; opacity: 0.7;
+  transition: transform 0.2s ease;
+}
+.nav-dropdown:hover .nav-dropdown-arrow,
+.nav-dropdown.open .nav-dropdown-arrow { transform: rotate(180deg); opacity: 1; }
+.nav-dropdown-menu {
+  position: absolute; top: calc(100% + 14px); left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: #152f38; border-radius: 10px;
+  padding: 6px; min-width: 172px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.07);
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+  z-index: 200;
+}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown.open .nav-dropdown-menu {
+  opacity: 1; visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown-menu a {
+  display: block; padding: 9px 14px; border-radius: 6px;
+  color: rgba(255,255,255,0.75); text-decoration: none;
+  font-size: 13px; font-weight: 500; letter-spacing: 0.01em;
+  transition: color 0.15s, background 0.15s;
+}
+.nav-dropdown-menu a:hover { color: #fff; background: rgba(255,255,255,0.09); }
+@media (max-width: 768px) {
+  .nav-dropdown, .nav-dropdown-btn, .nav-dropdown-menu { all: unset; display: contents; }
+  .nav-dropdown-menu { display: contents; }
+  .nav-dropdown-arrow { display: none; }
+}

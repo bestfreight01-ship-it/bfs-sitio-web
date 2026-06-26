@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-06-26 (Navbar — dropdown "Company / Empresa")
+- Agrupados "Services / About / Contact" dentro de un dropdown con label "Company" (EN) / "Empresa" (ES).
+- "Our Journey" / "Nuestra Trayectoria" se mantiene como botón independiente (página separada).
+- Dropdown se abre con hover (CSS) y click (JS), se cierra con Escape o click externo.
+- Mobile: los items se renderizan planos (flat) como antes, sin dropdown anidado.
+- Event delegation en `#nav` para sobrevivir re-renders por cambio de idioma.
+- CSS: `.nav-dropdown`, `.nav-dropdown-btn`, `.nav-dropdown-menu` con animación fade+slide.
+
 ## 2026-06-26 (Our Journey — página separada)
 - Movida la sección `#authority` fuera de `index.html` hacia una nueva página independiente: `frontend/our-journey.html`.
 - Nueva página accesible en `/our-journey` (Vercel `cleanUrls: true` mapea `our-journey.html` → `/our-journey`).
