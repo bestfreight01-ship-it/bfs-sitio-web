@@ -46,7 +46,61 @@ const content = {
     formSuccess: { title: "Request Sent!", text: "We'll contact you within 24 hours. Thank you for choosing BFS." },
     banner1Title: "Real Results on Every Load",
     banner1Sub: "Optimization, negotiation and precise execution on every move.",
-    footerCopy: "© 2026 Best Freight Solutions. All rights reserved."
+    footerCopy: "© 2026 Best Freight Solutions. All rights reserved.",
+    authStatsLabels: ["Loads Dispatched", "Freight Revenue Secured", "Miles Coordinated", "Broker Connections", "Recurring Partners"],
+    authJourneyLabel: "Our Journey",
+    authJourneyTitle: ["Growing Since ", "2021"],
+    authJourneyDesc: "From 23 loads in our first year to over 1,800 in 2025 — built on relationships, expertise, and real results for every carrier we serve.",
+    authTimeline: [
+      { year: "2021", metric: "23 Loads", title: "Founded", desc: "Launched with one mission: build the freight operations partner that carriers actually deserved." },
+      { year: "2022", metric: "180+ Loads", title: "First Roots", desc: "Key broker relationships established across PA, NJ, NY. Northeast Corridor became our operational base." },
+      { year: "2023", metric: "600+ Loads", title: "Network Built", desc: "Crossed 85+ recurring broker relationships. Reputation built load by load, mile by mile." },
+      { year: "2024", metric: "1,200+ Loads", title: "Consolidated", desc: "1,000+ active broker connections. $4M+ in freight revenue secured for carriers across the US." },
+      { year: "2025", metric: "1,800+ Loads", title: "At Scale", desc: "5,000+ total loads dispatched. 26+ carriers served. 1.9M+ miles coordinated nationwide." }
+    ],
+    authTrustLabel: "Why Carriers Choose Us",
+    authTrustTitle: ["Built From the ", "Carrier's Perspective"],
+    authTrustItems: [
+      { icon: "📊", title: "We Know the Freight Market", desc: "We monitor rate volatility daily and position your truck where the market pays best." },
+      { icon: "🤝", title: "We Understand How Brokers Think", desc: "85+ recurring broker relationships built on trust — not cold calls. We know how to negotiate." },
+      { icon: "💰", title: "We Protect Your Profitability", desc: "Every rate negotiated with your costs in mind. No load accepted at a loss." },
+      { icon: "🗺️", title: "Northeast Corridor Expertise", desc: "Deep operational presence in PA, NJ, NY, MA, CT — one of the densest freight corridors in the US." },
+      { icon: "🔄", title: "Sustainable Operations", desc: "We don't push volume. We build consistency. Sustainable trucking always beats fast miles." },
+      { icon: "📋", title: "Full Back-Office Management", desc: "Docs, invoices, broker communication — fully handled so you focus on driving." }
+    ],
+    authPhilLabel: "Our Operating Philosophy",
+    authPhilText: ["Every truck is a ", "business.", " We understand that every mile, every rate, and every broker directly impacts your bottom line."],
+    authPhilItems: [
+      "We don't just find loads — we build your operation",
+      "Profitability over volume, always",
+      "Your growth is our measurement of success",
+      "Relationships built over years, not transactions"
+    ],
+    authBrokersLabel: "Trusted Broker Network",
+    authBrokersTitle: ["1,000+ Broker Connections. ", "85+ Recurring."],
+    authBrokersDesc: "Years of real relationships with some of the most recognized names in US freight.",
+    authBrokers: [
+      { icon: "🏆", name: "TQL", type: "Top 10 US Broker" },
+      { icon: "⭐", name: "Landstar", type: "Agent-Based Network" },
+      { icon: "🚛", name: "PLS Logistics", type: "Full Truckload" },
+      { icon: "🔧", name: "ATS Logistics", type: "Specialized Freight" },
+      { icon: "📦", name: "Ryan Transportation", type: "Flatbed Specialist" },
+      { icon: "🗺️", name: "Armstrong Transport", type: "Flatbed & Van" },
+      { icon: "🔗", name: "Trinity Logistics", type: "Multimodal" },
+      { icon: "⚡", name: "Axle Logistics", type: "Tech-Driven Broker" }
+    ],
+    authBrokersFooter: "Plus <strong>900+ additional brokers</strong> in our active network across all 48 states.",
+    authCommLabel: "Latino Community",
+    authCommTitle: ["We Speak Your ", "Language — In Every Way"],
+    authCommDesc: "BFS was built understanding the daily reality of Latino carriers in the United States. We know your culture, your challenges, and your ambition. That's why we communicate differently.",
+    authCommTags: ["🗣️ Spanish & English", "🤝 Cultural Understanding", "🚛 Trucking Community", "💼 Latino Business"],
+    authCommCardHeading: ["Hablamos tu idioma. ", "We speak your language."],
+    authCommCardText: "Whether you're a first-generation owner-operator or scaling your fleet, BFS understands where you come from and where you're headed. We serve all carriers — and we're especially proud of our roots in the Latino trucking community.",
+    authCommLangs: ["English", "Español"],
+    authCtaLabel: "Your Next Move",
+    authCtaHeading: ["We're Not Just Dispatch. ", "We're Part of Your Growth."],
+    authCtaSub: "5,000+ loads. $6M+ in secured freight revenue. 1.9M miles coordinated. The track record is real — let's build yours.",
+    authCtaBtn: "Start Working With BFS →"
   },
   es: {
     navLinks: ["Servicios", "Nosotros", "Contacto"],
@@ -93,7 +147,61 @@ const content = {
     formSuccess: { title: "¡Solicitud Enviada!", text: "Te contactaremos dentro de 24 horas. Gracias por elegir BFS." },
     banner1Title: "Resultados Reales en Cada Carga",
     banner1Sub: "Optimización, negociación y ejecución precisa en cada movimiento",
-    footerCopy: "© 2026 Best Freight Solutions. Todos los derechos reservados."
+    footerCopy: "© 2026 Best Freight Solutions. Todos los derechos reservados.",
+    authStatsLabels: ["Cargas Despachadas", "Revenue Asegurado", "Millas Coordinadas", "Conexiones con Brokers", "Socios Recurrentes"],
+    authJourneyLabel: "Nuestra Trayectoria",
+    authJourneyTitle: ["Creciendo Desde ", "2021"],
+    authJourneyDesc: "De 23 cargas en nuestro primer año a más de 1,800 en 2025 — construido sobre relaciones, experiencia y resultados reales para cada carrier.",
+    authTimeline: [
+      { year: "2021", metric: "23 Cargas", title: "Fundación", desc: "Lanzamos con una misión: crear el socio de operaciones freight que los carriers realmente merecen." },
+      { year: "2022", metric: "180+ Cargas", title: "Primeras Raíces", desc: "Relaciones clave con brokers establecidas en PA, NJ, NY. El Northeast Corridor se convirtió en nuestra base." },
+      { year: "2023", metric: "600+ Cargas", title: "Red Construida", desc: "Cruzamos 85+ relaciones recurrentes con brokers. Reputación construida carga por carga, milla por milla." },
+      { year: "2024", metric: "1,200+ Cargas", title: "Consolidación", desc: "+1,000 conexiones activas con brokers. +$4M en freight revenue asegurado para carriers en todo EE.UU." },
+      { year: "2025", metric: "1,800+ Cargas", title: "Escala Operativa", desc: "+5,000 cargas despachadas en total. 26+ carriers atendidos. +1.9M millas coordinadas a nivel nacional." }
+    ],
+    authTrustLabel: "Por Qué Confían en Nosotros",
+    authTrustTitle: ["Construido Desde la ", "Perspectiva del Carrier"],
+    authTrustItems: [
+      { icon: "📊", title: "Conocemos el Mercado Freight", desc: "Monitoreamos la volatilidad de tarifas diariamente y posicionamos tu camión donde más paga." },
+      { icon: "🤝", title: "Entendemos Cómo Piensan los Brokers", desc: "85+ relaciones recurrentes construidas en confianza — no llamadas en frío. Sabemos negociar." },
+      { icon: "💰", title: "Protegemos tu Rentabilidad", desc: "Cada tarifa negociada con tus costos en mente. Ninguna carga aceptada a pérdida." },
+      { icon: "🗺️", title: "Especialistas en Northeast Corridor", desc: "Presencia operativa profunda en PA, NJ, NY, MA, CT — uno de los corredores más densos de EE.UU." },
+      { icon: "🔄", title: "Operaciones Sostenibles", desc: "No empujamos volumen. Construimos consistencia. Un trucking sostenible siempre gana a largo plazo." },
+      { icon: "📋", title: "Back-Office Completo", desc: "Documentos, facturas, comunicación con brokers — todo manejado para que te enfoques en manejar." }
+    ],
+    authPhilLabel: "Nuestra Filosofía Operativa",
+    authPhilText: ["Cada camión es un ", "negocio.", " Entendemos que cada milla, cada tarifa y cada broker impactan directamente tu rentabilidad."],
+    authPhilItems: [
+      "No solo conseguimos cargas — construimos tu operación",
+      "Rentabilidad sobre volumen, siempre",
+      "Tu crecimiento es nuestra medida de éxito",
+      "Relaciones construidas en años, no en transacciones"
+    ],
+    authBrokersLabel: "Red de Brokers de Confianza",
+    authBrokersTitle: ["1,000+ Conexiones con Brokers. ", "85+ Recurrentes."],
+    authBrokersDesc: "Años de relaciones reales con algunos de los nombres más reconocidos en el freight de EE.UU.",
+    authBrokers: [
+      { icon: "🏆", name: "TQL", type: "Top 10 Broker EE.UU." },
+      { icon: "⭐", name: "Landstar", type: "Red de Agentes" },
+      { icon: "🚛", name: "PLS Logistics", type: "Full Truckload" },
+      { icon: "🔧", name: "ATS Logistics", type: "Carga Especializada" },
+      { icon: "📦", name: "Ryan Transportation", type: "Especialista Flatbed" },
+      { icon: "🗺️", name: "Armstrong Transport", type: "Flatbed y Van" },
+      { icon: "🔗", name: "Trinity Logistics", type: "Multimodal" },
+      { icon: "⚡", name: "Axle Logistics", type: "Broker Tecnológico" }
+    ],
+    authBrokersFooter: "Más <strong>900+ brokers adicionales</strong> en nuestra red activa en los 48 estados.",
+    authCommLabel: "Comunidad Latina",
+    authCommTitle: ["Hablamos tu Idioma ", "— En Todos los Sentidos"],
+    authCommDesc: "BFS fue construido entendiendo la realidad diaria de los carriers latinos en Estados Unidos. Conocemos tu cultura, tus desafíos y tu ambición. Por eso nos comunicamos diferente.",
+    authCommTags: ["🗣️ Español e Inglés", "🤝 Comprensión Cultural", "🚛 Comunidad Trucking", "💼 Negocio Latino"],
+    authCommCardHeading: ["Hablamos tu idioma. ", "We speak your language."],
+    authCommCardText: "Ya seas un owner-operator de primera generación o estés escalando tu flota, BFS entiende de dónde vienes y hacia dónde vas. Servimos a todos los carriers — y estamos especialmente orgullosos de nuestras raíces en la comunidad latina del trucking.",
+    authCommLangs: ["English", "Español"],
+    authCtaLabel: "Tu Próximo Paso",
+    authCtaHeading: ["No Somos Solo Dispatch. ", "Somos Parte de Tu Crecimiento."],
+    authCtaSub: "5,000+ cargas. $6M+ en freight revenue asegurado. 1.9M millas coordinadas. El historial es real — construyamos el tuyo.",
+    authCtaBtn: "Empieza a Trabajar con BFS →"
   }
 };
 
@@ -101,6 +209,158 @@ const cardImgs = ['images/Imagen2.webp', 'images/Imagen3-9fd2565e.webp', 'images
 const imgPos = ['center 30%', 'center 20%', 'center 60%', 'center 40%'];
 
 let lang = localStorage.getItem('bfs-lang') || 'en';
+let authLayoutDone = false;
+
+const AUTH_STATS = [
+  { num: 5000, prefix: '', suffix: '+', decimals: 0 },
+  { num: 6, prefix: '$', suffix: 'M+', decimals: 0 },
+  { num: 1.9, prefix: '', suffix: 'M+', decimals: 1 },
+  { num: 1000, prefix: '', suffix: '+', decimals: 0 },
+  { num: 85, prefix: '', suffix: '+', decimals: 0 }
+];
+
+function animateCounter(el) {
+  const target = parseFloat(el.dataset.target);
+  const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '';
+  const decimals = parseInt(el.dataset.decimals) || 0;
+  const duration = 2000;
+  const startTime = performance.now();
+  function tick(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const val = target * ease;
+    const display = decimals > 0 ? val.toFixed(decimals) : Math.floor(val).toLocaleString();
+    el.textContent = prefix + display + suffix;
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+function initAuthority() {
+  const c = content[lang];
+
+  document.getElementById('auth-stats-grid').innerHTML = AUTH_STATS.map((s, i) => `
+    <div class="auth-stat-item">
+      <div class="auth-stat-num"
+        data-target="${s.num}" data-prefix="${s.prefix}"
+        data-suffix="${s.suffix}" data-decimals="${s.decimals}">
+        ${s.prefix}0${s.suffix}
+      </div>
+      <div class="auth-stat-label">${c.authStatsLabels[i]}</div>
+    </div>`).join('');
+
+  document.getElementById('auth-journey-label').textContent = c.authJourneyLabel;
+  document.getElementById('auth-journey-title').innerHTML = `${c.authJourneyTitle[0]}<span>${c.authJourneyTitle[1]}</span>`;
+  document.getElementById('auth-journey-desc').textContent = c.authJourneyDesc;
+  document.getElementById('auth-timeline').innerHTML = c.authTimeline.map((item) => `
+    <div class="auth-tl-item">
+      <div class="auth-tl-dot">${item.year}</div>
+      <div class="auth-tl-body">
+        <div class="auth-tl-metric">${item.metric}</div>
+        <div class="auth-tl-title">${item.title}</div>
+        <div class="auth-tl-desc">${item.desc}</div>
+      </div>
+    </div>`).join('');
+
+  document.getElementById('auth-trust-label').textContent = c.authTrustLabel;
+  document.getElementById('auth-trust-title').innerHTML = `${c.authTrustTitle[0]}<span>${c.authTrustTitle[1]}</span>`;
+  document.getElementById('auth-trust-list').innerHTML = c.authTrustItems.map((item) => `
+    <div class="auth-trust-item">
+      <div class="auth-trust-icon">${item.icon}</div>
+      <div>
+        <div class="auth-trust-ttl">${item.title}</div>
+        <div class="auth-trust-dsc">${item.desc}</div>
+      </div>
+    </div>`).join('');
+
+  document.getElementById('auth-philosophy').innerHTML = `
+    <div class="auth-phil-label">${c.authPhilLabel}</div>
+    <div class="auth-phil-text">${c.authPhilText[0]}<span>${c.authPhilText[1]}</span>${c.authPhilText[2]}</div>
+    <div class="auth-phil-items">
+      ${c.authPhilItems.map((item) => `<div class="auth-phil-item">${item}</div>`).join('')}
+    </div>`;
+
+  document.getElementById('auth-brokers-label').textContent = c.authBrokersLabel;
+  document.getElementById('auth-brokers-title').innerHTML = `${c.authBrokersTitle[0]}<span style="color:var(--gold)">${c.authBrokersTitle[1]}</span>`;
+  document.getElementById('auth-brokers-desc').textContent = c.authBrokersDesc;
+  document.getElementById('auth-brokers-grid').innerHTML = c.authBrokers.map((b) => `
+    <div class="auth-broker-card">
+      <div class="auth-broker-icon">${b.icon}</div>
+      <div class="auth-broker-name">${b.name}</div>
+      <div class="auth-broker-type">${b.type}</div>
+    </div>`).join('');
+  document.getElementById('auth-brokers-footer-row').innerHTML = c.authBrokersFooter;
+
+  document.getElementById('auth-comm-label').textContent = c.authCommLabel;
+  document.getElementById('auth-comm-title').innerHTML = `${c.authCommTitle[0]}<span>${c.authCommTitle[1]}</span>`;
+  document.getElementById('auth-comm-desc').textContent = c.authCommDesc;
+  document.getElementById('auth-comm-tags').innerHTML = c.authCommTags.map((tag) => `<span class="auth-comm-tag">${tag}</span>`).join('');
+  document.getElementById('auth-comm-card').innerHTML = `
+    <div class="auth-comm-heading">${c.authCommCardHeading[0]}<span>${c.authCommCardHeading[1]}</span></div>
+    <div class="auth-comm-body">${c.authCommCardText}</div>
+    <div class="auth-comm-langs">
+      <span class="auth-comm-lang en">${c.authCommLangs[0]}</span>
+      <span class="auth-comm-lang es">${c.authCommLangs[1]}</span>
+    </div>`;
+
+  document.getElementById('auth-cta-inner').innerHTML = `
+    <div class="auth-cta-pill">${c.authCtaLabel}</div>
+    <div class="auth-cta-heading">${c.authCtaHeading[0]}<span>${c.authCtaHeading[1]}</span></div>
+    <div class="auth-cta-sub">${c.authCtaSub}</div>
+    <button class="auth-cta-btn" data-scroll-to="contact">${c.authCtaBtn}</button>`;
+
+  setupCounters();
+  if (!authLayoutDone) {
+    authLayoutDone = true;
+    setupAuthorityAnimations();
+  }
+}
+
+function setupCounters() {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('.auth-stat-num[data-target]').forEach((el) => obs.observe(el));
+}
+
+function setupAuthorityAnimations() {
+  const wrappers = ['auth-stats-belt', 'auth-journey-wrap', 'auth-trust-wrap', 'auth-brokers-wrap', 'auth-community-wrap', 'auth-cta-wrap'];
+  wrappers.forEach((id) => {
+    const el = document.querySelector('.' + id);
+    if (!el) return;
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(28px)';
+    el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        obs.disconnect();
+      }
+    }, { threshold: 0.08 });
+    obs.observe(el);
+  });
+
+  document.querySelectorAll('.auth-tl-item, .auth-broker-card').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = `opacity 0.5s ease ${i * 60}ms, transform 0.5s ease ${i * 60}ms`;
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        obs.disconnect();
+      }
+    }, { threshold: 0.1 });
+    obs.observe(el);
+  });
+}
 
 function scrollToSection(id) {
   const el = document.getElementById(id);
@@ -185,6 +445,8 @@ function render() {
   document.getElementById('form-success-text').textContent = c.formSuccess.text;
 
   document.getElementById('footer-copy').textContent = c.footerCopy;
+
+  initAuthority();
 
   document.querySelectorAll('[data-scroll-to]').forEach((el) => {
     el.onclick = (e) => {

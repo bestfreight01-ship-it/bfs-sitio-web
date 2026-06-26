@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-06-26 (Authority Section — nueva sección premium)
+- Agregada sección `#authority` entre el segundo photo banner y los testimonios. Contiene 6 subsecciones:
+  1. **Stats Belt**: 5 métricas animadas con contadores (5,000+ Loads / $6M+ Revenue / 1.9M+ Miles / 1,000+ Brokers / 85+ Recurring), fondo oscuro (#0a1e25), números en gold.
+  2. **Journey Timeline**: Línea de tiempo horizontal (desktop) / vertical (mobile) 2021→2025 con hitos, métricas por año y descripciones reales de crecimiento.
+  3. **Why Carriers Trust Us + Philosophy Box**: Grid 2 columnas — izquierda: 6 razones de confianza con iconos; derecha: caja oscura con filosofía operativa "Every truck is a business."
+  4. **Trusted Broker Network**: Grid 4×2 de 8 brokers (TQL, Landstar, PLS, ATS, Ryan, Armstrong, Trinity, Axle) sobre fondo #0d2028.
+  5. **Latino Community**: Split layout — texto con tags culturales + card bilingüe "Hablamos tu idioma / We speak your language."
+  6. **Final CTA**: Sección oscura con gradient, heading premium y botón "Start Working With BFS →" / "Empieza a Trabajar con BFS →".
+- Implementado bilingüe completo (EN/ES) para todas las subsecciones vía el sistema existente `content` + `render()`.
+- Counters re-animan en cada cambio de idioma si están en viewport.
+- Animaciones de scroll-in (IntersectionObserver) para wrappers e items individuales (timeline, broker cards) con stagger por índice.
+- CSS completamente responsive: 5 cols → 3 cols (1000px) → 2 cols (600px) para stats; timeline horizontal → vertical en mobile.
+- Ninguna funcionalidad existente alterada (nav, formulario, scroll, testimonios, contacto).
+
 ## 2026-06-25 (mobile menu layout)
 - Corregido layout del menú mobile: los `<a>` dentro de `#mobile-menu-links` eran `display: inline` por defecto, causando que Services/About/Contact se renderizaran en una sola línea. Agregado `display: block` al CSS para que se apilen correctamente.
 
