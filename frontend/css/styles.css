@@ -844,22 +844,40 @@ section { padding: 96px 0; }
 
 /* ── Journey Page ── */
 .journey-page-hero {
-  background: linear-gradient(135deg, #0a1e25 0%, #1a3d47 60%, #1e4d40 100%);
+  background-image: url('../images/our-journey-hero.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   padding: 140px 0 80px;
+  min-height: 420px;
   position: relative;
   overflow: hidden;
 }
 .journey-page-hero::before {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 80% 50%, rgba(45,138,122,0.12) 0%, transparent 65%);
+  background: linear-gradient(
+    135deg,
+    rgba(10,30,37,0.82) 0%,
+    rgba(26,61,71,0.70) 55%,
+    rgba(10,30,37,0.76) 100%
+  );
+  z-index: 0;
 }
 .journey-hero-accent {
   position: absolute; right: -80px; top: -80px;
   width: 500px; height: 500px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(245,166,35,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(245,166,35,0.10) 0%, transparent 70%);
+  z-index: 1;
 }
-.journey-hero-inner { position: relative; z-index: 1; }
+.journey-hero-inner { position: relative; z-index: 2; }
+@media (max-width: 768px) {
+  .journey-page-hero {
+    background-position: center top;
+    padding: 120px 0 60px;
+    min-height: 320px;
+  }
+}
 .journey-page-title {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: clamp(36px, 5vw, 64px);
