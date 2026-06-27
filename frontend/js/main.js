@@ -411,6 +411,8 @@ function initLoadsSlider() {
   });
 
   window.addEventListener('resize', () => setPos(current, false));
+
+  setInterval(() => goTo(current + 1), 5000);
 }
 
 function setupCounters() {
