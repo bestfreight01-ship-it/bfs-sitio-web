@@ -349,30 +349,67 @@ function initLoadsSlider() {
   if (!track || loadsSliderDone) return;
   loadsSliderDone = true;
 
-  const slides = track.querySelectorAll('.loads-slide');
-  const total = slides.length;
-  let current = 0;
+  const origSlides = Array.from(track.querySelectorAll('.loads-slide'));
+  const total = origSlides.length;
+
+  // Clone last → prepend, clone first → append for seamless infinite loop.
+  // Layout: [cloneLast=0, slide1=1, ..., slideN=total, cloneFirst=total+1]
+  const headClone = origSlides[total - 1].cloneNode(true);
+  const tailClone = origSlides[0].cloneNode(true);
+  headClone.setAttribute('aria-hidden', 'true');
+  tailClone.setAttribute('aria-hidden', 'true');
+  track.insertBefore(headClone, origSlides[0]);
+  track.appendChild(tailClone);
+
+  let current = 1;
+  let busy = false;
 
   const dotsEl = document.getElementById('loads-dots');
   const counterEl = document.getElementById('loads-counter');
 
-  dotsEl.innerHTML = Array.from({ length: total }, (_, i) =>
+  dotsEl.innerHTML = origSlides.map((_, i) =>
     `<button class="loads-dot${i === 0 ? ' active' : ''}" data-idx="${i}" aria-label="Slide ${i + 1}"></button>`
   ).join('');
 
-  function goTo(idx) {
-    current = (idx + total) % total;
-    track.style.transform = `translateX(-${current * 100}%)`;
-    dotsEl.querySelectorAll('.loads-dot').forEach((d, i) => d.classList.toggle('active', i === current));
-    if (counterEl) counterEl.textContent = `${current + 1} / ${total}`;
+  function slideWidth() { return track.parentElement.offsetWidth; }
+
+  function setPos(idx, animated) {
+    track.style.transition = animated
+      ? 'transform 0.46s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+      : 'none';
+    track.style.transform = `translateX(-${idx * slideWidth()}px)`;
   }
+
+  function updateUI(realIdx) {
+    dotsEl.querySelectorAll('.loads-dot').forEach((d, i) => d.classList.toggle('active', i === realIdx));
+    if (counterEl) counterEl.textContent = `${realIdx + 1} / ${total}`;
+  }
+
+  function goTo(idx) {
+    if (busy) return;
+    busy = true;
+    current = idx;
+    setPos(current, true);
+    updateUI(((current - 1) + total) % total);
+  }
+
+  // On reaching a clone, snap invisibly to the real counterpart
+  track.addEventListener('transitionend', () => {
+    if (current === 0) { current = total; setPos(current, false); }
+    else if (current === total + 1) { current = 1; setPos(current, false); }
+    busy = false;
+  });
+
+  setPos(current, false);
 
   document.getElementById('loads-prev').addEventListener('click', () => goTo(current - 1));
   document.getElementById('loads-next').addEventListener('click', () => goTo(current + 1));
   dotsEl.addEventListener('click', (e) => {
     const dot = e.target.closest('.loads-dot');
-    if (dot) goTo(parseInt(dot.dataset.idx));
+    if (dot) goTo(parseInt(dot.dataset.idx) + 1);
   });
+
+  window.addEventListener('resize', () => setPos(current, false));
 }
 
 function setupCounters() {

@@ -915,7 +915,6 @@ section { padding: 96px 0; }
 }
 .loads-track {
   display: flex;
-  transition: transform 0.46s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
 }
 .loads-slide {
