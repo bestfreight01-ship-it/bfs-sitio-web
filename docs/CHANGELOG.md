@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-06-26 (Our Journey — fix espacio blanco mobile entre slider y hero)
+- Eliminado el espacio en blanco excesivo que aparecía en mobile entre la sección del slider (fondo blanco) y el hero "Nuestra Trayectoria" (fondo oscuro).
+- **Causa raíz**: `@media (max-width: 768px) { .loads-gallery-wrap { padding: 88px 0 56px } }` — el `56px` de `padding-bottom` creaba una franja blanca visible en dispositivos de 601-768px de ancho. Los dispositivos ≤600px ya estaban corregidos (`padding: 84px 0 0`).
+- **Fix**: cambiado a `padding: 88px 0 0` en el breakpoint ≤768px (sin bottom padding).
+- **Bonus compactness**: hero a ≤600px reducido a `padding: 40px 0 48px; min-height: 220px` (era 56px / 280px) — más compacto al ser sección mid-page.
+
 ## 2026-06-26 (Our Journey — reorden de secciones y mobile slider inmersivo)
 - **Reorden de secciones**: Loads Gallery (slider) ahora es la primera sección visible de la página. El hero "Nuestra Trayectoria & Historia de la Empresa" se movió dentro de `<section id="authority">`, justo debajo del slider.
 - **Ajuste de spacing para nav fijo**: `#authority { padding-top: 0 }` para evitar doble clearance. Loads gallery aumentado a `padding-top: 100px` (desktop), `88px` (tablet), `84px` (mobile) para mantener clearance correcto del nav fijo de 70px. Hero reducido de `140px` a `72px` top padding (ya no necesita clearar el nav).
