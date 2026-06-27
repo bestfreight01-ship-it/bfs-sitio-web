@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-06-26 (Loads Gallery — autoplay)
+- Activado autoplay en el slider de cargas: avance automático a la siguiente imagen cada 5 segundos.
+- Implementado con `setInterval(() => goTo(current + 1), 5000)` al final de `initLoadsSlider`.
+- Reutiliza `goTo()` existente: el `busy` flag previene conflictos si el interval dispara durante una transición manual; ese tick se omite y el siguiente se dispara 5 segundos después.
+- El loop infinito (clone approach) sigue activo: al pasar la última imagen vuelve automáticamente a la primera.
+- Las flechas y dots manuales coexisten sin interrumpir el ciclo.
+
 ## 2026-06-26 (Broker Network — logos reales, mobile fix, ajustes de tamaño)
 - Reemplazados los iconos emoji de los 8 brokers por logos oficiales en PNG almacenados en `frontend/images/brokers/` (tql, landstar, pls, ats, ryan-transportation, armstrong, trinity, axle-logistics).
 - Cards actualizadas: `<img>` con `data-logo` attribute para targeting CSS individual. Subtítulo de tipo de broker eliminado — cada card muestra solo logo + nombre.
