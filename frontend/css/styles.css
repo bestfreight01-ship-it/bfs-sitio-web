@@ -550,7 +550,32 @@ section { padding: 96px 0; }
 }
 
 /* 2 — Journey Timeline */
-.auth-journey-wrap { background: var(--light); padding: 96px 0; }
+.auth-journey-wrap {
+  background-image: url('../images/our-journey-timeline.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 96px 0;
+  position: relative;
+}
+.auth-journey-wrap::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10,30,37,0.88) 0%,
+    rgba(10,30,37,0.72) 55%,
+    rgba(10,30,37,0.82) 100%
+  );
+  z-index: 0;
+}
+.auth-journey-wrap .section-inner { position: relative; z-index: 1; }
+.auth-journey-wrap .section-title { color: #fff; }
+.auth-journey-wrap .section-desc { color: rgba(255,255,255,0.65); }
+.auth-journey-wrap .section-label { color: var(--gold); }
+.auth-journey-wrap .section-label::before { background: var(--gold); }
+.auth-journey-wrap .auth-tl-title { color: rgba(255,255,255,0.92); }
+.auth-journey-wrap .auth-tl-desc  { color: rgba(255,255,255,0.60); }
 .auth-section-header { margin-bottom: 64px; }
 .auth-timeline {
   position: relative;
@@ -827,7 +852,7 @@ section { padding: 96px 0; }
   .auth-tl-item {
     flex-direction: row; align-items: flex-start;
     text-align: left; padding: 20px 0;
-    border-bottom: 1px solid rgba(26,61,71,0.08); gap: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.10); gap: 20px;
   }
   .auth-tl-dot { margin-bottom: 0; flex-shrink: 0; }
   .auth-trust-grid,
