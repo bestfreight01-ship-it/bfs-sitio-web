@@ -106,9 +106,9 @@ const content = {
     authCtaHeading: ["We're Not Just Dispatch. ", "We're Part of Your Growth."],
     authCtaSub: "5,000+ loads. $6M+ in secured freight revenue. 1.9M miles coordinated. The track record is real — let's build yours.",
     authCtaBtn: "Start Working With BFS →",
-    loadsLabel: "Real Loads. Real Results.",
-    loadsTitle: ["Verified ", "Completed Shipments"],
-    loadsDesc: "Every slide is a real load we dispatched — real routes, real rates, real delivery. This is what we do, every day."
+    loadsLabel: "Operational Excellence. Proven Results.",
+    loadsTitle: ["Loads Managed With ", "Experience and Precision"],
+    loadsDesc: "Every shipment represents the experience, coordination and commitment we bring to carriers every single day across the freight industry."
   },
   es: {
     navLinks: ["Servicios", "Nosotros", "Contacto"],
@@ -215,9 +215,9 @@ const content = {
     authCtaHeading: ["No Somos Solo Dispatch. ", "Somos Parte de Tu Crecimiento."],
     authCtaSub: "5,000+ cargas. $6M+ en freight revenue asegurado. 1.9M millas coordinadas. El historial es real — construyamos el tuyo.",
     authCtaBtn: "Empieza a Trabajar con BFS →",
-    loadsLabel: "Cargas Reales. Resultados Reales.",
-    loadsTitle: ["Envíos ", "Completados y Verificados"],
-    loadsDesc: "Cada slide es una carga real que despachamos — rutas reales, tarifas reales, entrega real. Esto es lo que hacemos, cada día."
+    loadsLabel: "Excelencia Operativa. Resultados Probados.",
+    loadsTitle: ["Cargas Gestionadas con ", "Experiencia y Precisión"],
+    loadsDesc: "Cada envío representa la experiencia, coordinación y compromiso que llevamos a cada carrier, cada día, en toda la industria freight."
   }
 };
 
