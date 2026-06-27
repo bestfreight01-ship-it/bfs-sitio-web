@@ -866,7 +866,7 @@ section { padding: 96px 0; }
 }
 @media (max-width: 600px) {
   .auth-stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .auth-stat-item:nth-child(odd)::after { display: none; }
+  .auth-stat-item:nth-child(even)::after { display: none; }
   .auth-brokers-grid { grid-template-columns: repeat(2, 1fr); }
   .auth-philosophy { padding: 36px 28px; }
   .auth-community-card { padding: 36px 28px; }
