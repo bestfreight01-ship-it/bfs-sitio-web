@@ -959,7 +959,7 @@ section { padding: 96px 0; }
 }
 .loads-dot.active { background: var(--gold); transform: scale(1.35); }
 @media (max-width: 768px) {
-  .loads-gallery-wrap { padding: 88px 0 56px; }
+  .loads-gallery-wrap { padding: 88px 0 0; }
   .loads-gallery-inner { gap: 32px; }
   .loads-slider-wrap { padding: 0 32px; }
   .loads-arrow { width: 42px; height: 42px; font-size: 17px; }
@@ -1019,6 +1019,13 @@ section { padding: 96px 0; }
     background-position: 65% bottom;
     padding: 56px 0 56px;
     min-height: 280px;
+    margin-top: 0;
+  }
+}
+@media (max-width: 600px) {
+  .journey-page-hero {
+    padding: 40px 0 48px;
+    min-height: 220px;
   }
 }
 .journey-page-title {
