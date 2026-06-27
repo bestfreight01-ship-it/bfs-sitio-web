@@ -901,6 +901,10 @@ section { padding: 96px 0; }
   padding: 6px 18px; border-radius: 20px;
 }
 .loads-counter span { color: var(--navy); font-weight: 700; }
+.loads-slider-wrap {
+  position: relative;
+  padding: 0 48px;
+}
 .loads-slider {
   position: relative;
   border-radius: 20px;
@@ -920,16 +924,21 @@ section { padding: 96px 0; }
 }
 .loads-arrow {
   position: absolute; top: 50%; transform: translateY(-50%);
-  width: 52px; height: 52px; border-radius: 50%;
-  background: rgba(10,30,37,0.72); border: 1.5px solid rgba(255,255,255,0.22);
-  color: white; font-size: 21px; cursor: pointer;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--navy); border: 2px solid rgba(255,255,255,0.12);
+  color: white; font-size: 20px; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
-  transition: all 0.2s; z-index: 10; backdrop-filter: blur(4px);
+  transition: all 0.22s; z-index: 10;
+  box-shadow: 0 8px 24px rgba(26,61,71,0.30);
   line-height: 1;
 }
-.loads-arrow:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
-.loads-prev { left: 18px; }
-.loads-next { right: 18px; }
+.loads-arrow:hover {
+  background: var(--gold); border-color: var(--gold); color: var(--navy);
+  box-shadow: 0 10px 28px rgba(245,166,35,0.35);
+  transform: translateY(-50%) scale(1.08);
+}
+.loads-prev { left: 0; }
+.loads-next { right: 0; }
 .loads-dots {
   position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
   display: flex; gap: 9px; z-index: 10;
@@ -942,9 +951,8 @@ section { padding: 96px 0; }
 .loads-dot.active { background: var(--gold); transform: scale(1.35); }
 @media (max-width: 600px) {
   .loads-gallery-wrap { padding: 60px 0 72px; }
-  .loads-arrow { width: 42px; height: 42px; font-size: 17px; }
-  .loads-prev { left: 10px; }
-  .loads-next { right: 10px; }
+  .loads-slider-wrap { padding: 0 38px; }
+  .loads-arrow { width: 38px; height: 38px; font-size: 16px; }
 }
 
 /* ── Journey Page ── */
