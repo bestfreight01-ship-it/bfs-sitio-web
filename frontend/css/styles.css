@@ -867,6 +867,71 @@ section { padding: 96px 0; }
   .auth-community-card { padding: 36px 28px; }
 }
 
+/* ── Loads Gallery ── */
+.loads-gallery-wrap {
+  background: var(--white);
+  padding: 96px 0;
+  border-top: 1px solid rgba(26,61,71,0.07);
+}
+.loads-gallery-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 64px;
+  align-items: center;
+}
+.loads-counter {
+  margin-top: 28px;
+  font-size: 14px; font-weight: 600;
+  color: var(--text-muted); letter-spacing: 0.05em;
+}
+.loads-counter span { color: var(--navy); }
+.loads-slider {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 56px rgba(26,61,71,0.18);
+  background: #0a1e25;
+  line-height: 0;
+}
+.loads-track {
+  display: flex;
+  transition: transform 0.46s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+.loads-slide {
+  min-width: 100%; width: 100%;
+  height: auto; display: block; object-fit: cover;
+}
+.loads-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 46px; height: 46px; border-radius: 50%;
+  background: rgba(10,30,37,0.72); border: 1.5px solid rgba(255,255,255,0.22);
+  color: white; font-size: 19px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s; z-index: 10; backdrop-filter: blur(4px);
+  line-height: 1;
+}
+.loads-arrow:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+.loads-prev { left: 14px; }
+.loads-next { right: 14px; }
+.loads-dots {
+  position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 8px; z-index: 10;
+}
+.loads-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,0.35); cursor: pointer;
+  transition: all 0.22s; border: none; padding: 0;
+}
+.loads-dot.active { background: var(--gold); transform: scale(1.35); }
+@media (max-width: 900px) {
+  .loads-gallery-inner { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 600px) {
+  .loads-gallery-wrap { padding: 64px 0; }
+  .loads-arrow { width: 38px; height: 38px; font-size: 16px; }
+}
+
 /* ── Journey Page ── */
 .journey-page-hero {
   background-image: url('../images/our-journey-hero.png');

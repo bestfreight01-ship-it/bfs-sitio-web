@@ -105,7 +105,10 @@ const content = {
     authCtaLabel: "Your Next Move",
     authCtaHeading: ["We're Not Just Dispatch. ", "We're Part of Your Growth."],
     authCtaSub: "5,000+ loads. $6M+ in secured freight revenue. 1.9M miles coordinated. The track record is real — let's build yours.",
-    authCtaBtn: "Start Working With BFS →"
+    authCtaBtn: "Start Working With BFS →",
+    loadsLabel: "Real Loads. Real Results.",
+    loadsTitle: ["Verified ", "Completed Shipments"],
+    loadsDesc: "Every slide is a real load we dispatched — real routes, real rates, real delivery. This is what we do, every day."
   },
   es: {
     navLinks: ["Servicios", "Nosotros", "Contacto"],
@@ -211,7 +214,10 @@ const content = {
     authCtaLabel: "Tu Próximo Paso",
     authCtaHeading: ["No Somos Solo Dispatch. ", "Somos Parte de Tu Crecimiento."],
     authCtaSub: "5,000+ cargas. $6M+ en freight revenue asegurado. 1.9M millas coordinadas. El historial es real — construyamos el tuyo.",
-    authCtaBtn: "Empieza a Trabajar con BFS →"
+    authCtaBtn: "Empieza a Trabajar con BFS →",
+    loadsLabel: "Cargas Reales. Resultados Reales.",
+    loadsTitle: ["Envíos ", "Completados y Verificados"],
+    loadsDesc: "Cada slide es una carga real que despachamos — rutas reales, tarifas reales, entrega real. Esto es lo que hacemos, cada día."
   }
 };
 
@@ -220,6 +226,7 @@ const imgPos = ['center 30%', 'center 20%', 'center 60%', 'center 40%'];
 
 let lang = localStorage.getItem('bfs-lang') || 'en';
 let authLayoutDone = false;
+let loadsSliderDone = false;
 
 const AUTH_STATS = [
   { num: 5000, prefix: '', suffix: '+', decimals: 0 },
@@ -321,11 +328,51 @@ function initAuthority() {
     <div class="auth-cta-sub">${c.authCtaSub}</div>
     <button class="auth-cta-btn" data-scroll-to="contact">${c.authCtaBtn}</button>`;
 
+  // Loads gallery text (bilingual)
+  const loadsLabel = document.getElementById('loads-label');
+  if (loadsLabel) {
+    loadsLabel.textContent = c.loadsLabel;
+    document.getElementById('loads-title').innerHTML = `${c.loadsTitle[0]}<span>${c.loadsTitle[1]}</span>`;
+    document.getElementById('loads-desc').textContent = c.loadsDesc;
+  }
+
   setupCounters();
   if (!authLayoutDone) {
     authLayoutDone = true;
     setupAuthorityAnimations();
+    initLoadsSlider();
   }
+}
+
+function initLoadsSlider() {
+  const track = document.getElementById('loads-track');
+  if (!track || loadsSliderDone) return;
+  loadsSliderDone = true;
+
+  const slides = track.querySelectorAll('.loads-slide');
+  const total = slides.length;
+  let current = 0;
+
+  const dotsEl = document.getElementById('loads-dots');
+  const counterEl = document.getElementById('loads-counter');
+
+  dotsEl.innerHTML = Array.from({ length: total }, (_, i) =>
+    `<button class="loads-dot${i === 0 ? ' active' : ''}" data-idx="${i}" aria-label="Slide ${i + 1}"></button>`
+  ).join('');
+
+  function goTo(idx) {
+    current = (idx + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dotsEl.querySelectorAll('.loads-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+    if (counterEl) counterEl.textContent = `${current + 1} / ${total}`;
+  }
+
+  document.getElementById('loads-prev').addEventListener('click', () => goTo(current - 1));
+  document.getElementById('loads-next').addEventListener('click', () => goTo(current + 1));
+  dotsEl.addEventListener('click', (e) => {
+    const dot = e.target.closest('.loads-dot');
+    if (dot) goTo(parseInt(dot.dataset.idx));
+  });
 }
 
 function setupCounters() {
@@ -341,7 +388,7 @@ function setupCounters() {
 }
 
 function setupAuthorityAnimations() {
-  const wrappers = ['auth-stats-belt', 'auth-journey-wrap', 'auth-trust-wrap', 'auth-brokers-wrap', 'auth-community-wrap', 'auth-cta-wrap'];
+  const wrappers = ['auth-stats-belt', 'auth-journey-wrap', 'auth-trust-wrap', 'auth-brokers-wrap', 'auth-community-wrap', 'loads-gallery-wrap', 'auth-cta-wrap'];
   wrappers.forEach((id) => {
     const el = document.querySelector('.' + id);
     if (!el) return;
