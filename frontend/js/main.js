@@ -85,14 +85,14 @@ const content = {
     authBrokersTitle: ["1,000+ Broker Connections. ", "85+ Recurring."],
     authBrokersDesc: "Years of real relationships with some of the most recognized names in US freight.",
     authBrokers: [
-      { icon: "🏆", name: "TQL", type: "Top 10 US Broker" },
-      { icon: "⭐", name: "Landstar", type: "Agent-Based Network" },
-      { icon: "🚛", name: "PLS Logistics", type: "Full Truckload" },
-      { icon: "🔧", name: "ATS Logistics", type: "Specialized Freight" },
-      { icon: "📦", name: "Ryan Transportation", type: "Flatbed Specialist" },
-      { icon: "🗺️", name: "Armstrong Transport", type: "Flatbed & Van" },
-      { icon: "🔗", name: "Trinity Logistics", type: "Multimodal" },
-      { icon: "⚡", name: "Axle Logistics", type: "Tech-Driven Broker" }
+      { logo: "tql.png", name: "TQL", type: "Top 10 US Broker" },
+      { logo: "landstar.png", name: "Landstar", type: "Agent-Based Network" },
+      { logo: "pls.png", name: "PLS Logistics", type: "Full Truckload" },
+      { logo: "ats.png", name: "ATS Logistics", type: "Specialized Freight" },
+      { logo: "ryan-transportation.png", name: "Ryan Transportation", type: "Flatbed Specialist" },
+      { logo: "armstrong.png", name: "Armstrong Transport", type: "Flatbed & Van" },
+      { logo: "trinity.png", name: "Trinity Logistics", type: "Multimodal" },
+      { logo: "axle-logistics.png", name: "Axle Logistics", type: "Tech-Driven Broker" }
     ],
     authBrokersFooter: "Plus <strong>900+ additional brokers</strong> in our active network across all 48 states.",
     authCommLabel: "Latino Community",
@@ -194,14 +194,14 @@ const content = {
     authBrokersTitle: ["1,000+ Conexiones con Brokers. ", "85+ Recurrentes."],
     authBrokersDesc: "Años de relaciones reales con algunos de los nombres más reconocidos en el freight de EE.UU.",
     authBrokers: [
-      { icon: "🏆", name: "TQL", type: "Top 10 Broker EE.UU." },
-      { icon: "⭐", name: "Landstar", type: "Red de Agentes" },
-      { icon: "🚛", name: "PLS Logistics", type: "Full Truckload" },
-      { icon: "🔧", name: "ATS Logistics", type: "Carga Especializada" },
-      { icon: "📦", name: "Ryan Transportation", type: "Especialista Flatbed" },
-      { icon: "🗺️", name: "Armstrong Transport", type: "Flatbed y Van" },
-      { icon: "🔗", name: "Trinity Logistics", type: "Multimodal" },
-      { icon: "⚡", name: "Axle Logistics", type: "Broker Tecnológico" }
+      { logo: "tql.png", name: "TQL", type: "Top 10 Broker EE.UU." },
+      { logo: "landstar.png", name: "Landstar", type: "Red de Agentes" },
+      { logo: "pls.png", name: "PLS Logistics", type: "Full Truckload" },
+      { logo: "ats.png", name: "ATS Logistics", type: "Carga Especializada" },
+      { logo: "ryan-transportation.png", name: "Ryan Transportation", type: "Especialista Flatbed" },
+      { logo: "armstrong.png", name: "Armstrong Transport", type: "Flatbed y Van" },
+      { logo: "trinity.png", name: "Trinity Logistics", type: "Multimodal" },
+      { logo: "axle-logistics.png", name: "Axle Logistics", type: "Broker Tecnológico" }
     ],
     authBrokersFooter: "Más <strong>900+ brokers adicionales</strong> en nuestra red activa en los 48 estados.",
     authCommLabel: "Comunidad Latina",
@@ -304,7 +304,9 @@ function initAuthority() {
   document.getElementById('auth-brokers-desc').textContent = c.authBrokersDesc;
   document.getElementById('auth-brokers-grid').innerHTML = c.authBrokers.map((b) => `
     <div class="auth-broker-card">
-      <div class="auth-broker-icon">${b.icon}</div>
+      <div class="auth-broker-logo">
+        <img src="images/brokers/${b.logo}" alt="${b.name} logo" loading="lazy"/>
+      </div>
       <div class="auth-broker-name">${b.name}</div>
       <div class="auth-broker-type">${b.type}</div>
     </div>`).join('');

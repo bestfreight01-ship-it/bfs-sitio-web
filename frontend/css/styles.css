@@ -725,12 +725,18 @@ section { padding: 96px 0; }
   transform: translateY(-4px);
   box-shadow: 0 14px 36px rgba(0,0,0,0.35);
 }
-.auth-broker-icon {
-  width: 46px; height: 46px; border-radius: 10px;
-  background: linear-gradient(135deg, rgba(45,138,122,0.18), rgba(122,182,72,0.12));
-  border: 1px solid rgba(45,138,122,0.22);
+.auth-broker-logo {
+  height: 64px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 20px; margin: 0 auto 13px;
+  margin: 0 auto 14px;
+  padding: 10px 16px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+.auth-broker-logo img {
+  max-height: 40px; max-width: 120px;
+  width: auto; height: auto;
+  object-fit: contain; display: block;
 }
 .auth-broker-name {
   font-family: 'Barlow Condensed', sans-serif;
