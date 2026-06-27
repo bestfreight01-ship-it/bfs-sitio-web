@@ -305,10 +305,9 @@ function initAuthority() {
   document.getElementById('auth-brokers-grid').innerHTML = c.authBrokers.map((b) => `
     <div class="auth-broker-card">
       <div class="auth-broker-logo">
-        <img src="images/brokers/${b.logo}" alt="${b.name} logo" loading="lazy"/>
+        <img src="images/brokers/${b.logo}?v=2" alt="${b.name} logo" loading="lazy"/>
       </div>
       <div class="auth-broker-name">${b.name}</div>
-      <div class="auth-broker-type">${b.type}</div>
     </div>`).join('');
   document.getElementById('auth-brokers-footer-row').innerHTML = c.authBrokersFooter;
 
