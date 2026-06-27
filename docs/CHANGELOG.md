@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-06-26 (Our Journey — reorden de secciones y mobile slider inmersivo)
+- **Reorden de secciones**: Loads Gallery (slider) ahora es la primera sección visible de la página. El hero "Nuestra Trayectoria & Historia de la Empresa" se movió dentro de `<section id="authority">`, justo debajo del slider.
+- **Ajuste de spacing para nav fijo**: `#authority { padding-top: 0 }` para evitar doble clearance. Loads gallery aumentado a `padding-top: 100px` (desktop), `88px` (tablet), `84px` (mobile) para mantener clearance correcto del nav fijo de 70px. Hero reducido de `140px` a `72px` top padding (ya no necesita clearar el nav).
+- **Reorden previo de stats belt y loads gallery**: Stats Belt (métricas) se movió debajo del slider también — nuevo orden completo: Slider → Hero → Stats Belt → Timeline → Trust → Brokers → Community → CTA.
+- **Slider mobile inmersivo** (≤600px): slider edge-to-edge con `margin: 0 -24px` para cancelar el padding del `section-inner`. Sin border-radius ni sombra. Flechas reposicionadas dentro de la imagen a `left/right: 12px`. Descripción de texto ocultada para maximizar espacio visual de la imagen.
+
 ## 2026-06-26 (Loads Gallery — autoplay)
 - Activado autoplay en el slider de cargas: avance automático a la siguiente imagen cada 5 segundos.
 - Implementado con `setInterval(() => goTo(current + 1), 5000)` al final de `initLoadsSlider`.
