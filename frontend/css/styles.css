@@ -738,6 +738,9 @@ section { padding: 96px 0; }
   width: auto; height: auto;
   object-fit: contain; display: block;
 }
+.auth-broker-logo img[data-logo="landstar"] {
+  max-height: 52px; max-width: 150px;
+}
 .auth-broker-name {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 17px; font-weight: 700; color: white; margin: 0;
