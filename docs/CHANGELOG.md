@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-06-26 (Broker Network — logos reales, mobile fix, ajustes de tamaño)
+- Reemplazados los iconos emoji de los 8 brokers por logos oficiales en PNG almacenados en `frontend/images/brokers/` (tql, landstar, pls, ats, ryan-transportation, armstrong, trinity, axle-logistics).
+- Cards actualizadas: `<img>` con `data-logo` attribute para targeting CSS individual. Subtítulo de tipo de broker eliminado — cada card muestra solo logo + nombre.
+- Solucionado desbordamiento en mobile (≤600px): `max-width: 100%` en todas las imágenes de logo + `overflow: hidden` en `.auth-broker-logo` evita que imágenes anchas rompan el grid de 2 columnas.
+- Corregida regla de dividers del Stats Belt en ≤600px: `nth-child(odd)` → `nth-child(even)` — los separadores ahora aparecen correctamente entre columnas y no en el borde derecho del grid.
+- Logos Landstar, Armstrong y PLS escalados a `max-height: 52px` (vs 38px del resto) mediante selector `[data-logo]` individual.
+- Cache-bust incremental (`?v=2`, `?v=3`) al actualizar archivos para forzar descarga del asset nuevo en browser y CDN.
+
+## 2026-06-26 (Our Journey — slider de cargas completamente refactorizado)
+- **Layout reorganizado**: `.loads-gallery-inner` cambiado de grid `1fr / 1.8fr` (texto izquierda, slider derecha) a `flex-column` — texto centrado como header arriba, slider full-width abajo.
+- **Flechas extraídas del slider**: nuevo `.loads-slider-wrap` con `padding: 0 48px` aloja las flechas ← → fuera del recuadro de imagen. Estilo: fondo navy sólido, `box-shadow`, hover gold con `scale(1.08)`.
+- **Bug crítico de navegación corregido**: `translateX(-${current * 100}%)` usaba `%` relativo al ancho del track (5× el contenedor), causando pantalla negra en cada navegación. Reemplazado por valores en `px` vía `offsetWidth`.
+- **Carousel infinito (clone approach)**: clon del último slide prependido + clon del primero appendido. Layout `[clonLast=0 | slide1 | ... | slide5 | clonFirst=total+1]`. Al llegar a un clon, `transitionend` hace snap invisible al slide real correspondiente. Dirección circular en ambos sentidos sin pantallas negras.
+- `transition` movida de CSS a JS para poder desactivarla durante el snap. `busy` flag previene doble-click mid-transición. `resize` recalcula offset en px.
+- Mobile: `padding: 0 38px`, flechas `38×38px`.
+
+## 2026-06-26 (Our Journey — galería de cargas)
+- Agregada nueva sección "Loads Gallery" entre Stats Belt y Timeline en `/our-journey`.
+- Slider horizontal de 5 imágenes de cargas completadas (`frontend/images/loads/1-5.png`), navegación ← → + dots indicadores + contador "1 / 5".
+- Copywriting premium (EN/ES): "Operational Excellence. Proven Results." / "Loads Managed With Experience and Precision".
+- Bilingüe completo vía `content` dict; `loadsSliderDone` flag evita re-inicialización en cambio de idioma.
+- Wrappers de animación scroll-in actualizados para incluir la nueva sección en el orden correcto del DOM.
+
+## 2026-06-26 (Our Journey — imagen de fondo en sección Timeline)
+- Sección "Growing Since 2021" (`.auth-journey-wrap`) reemplazó el fondo plano por `our-journey-timeline.png` (mapa mundial con ruta de crecimiento y 5 pins de ubicación, 1.56MB).
+- Overlay `rgba(10,30,37,0.88)` para mantener contraste. Todos los colores de texto de la sección sobreescritos a white/rgba para visibilidad sobre fondo oscuro.
+
 ## 2026-06-26 (Our Journey — hero image)
 - Reemplazado el fondo CSS degradado de la Hero Section de `/our-journey` por la imagen real `our-journey-hero.png` (camión + skyline urbano), almacenada en `frontend/images/`.
 - Overlay oscuro conservado vía `::before` con gradiente `rgba(10,30,37,0.82)` para mantener legibilidad del texto.
