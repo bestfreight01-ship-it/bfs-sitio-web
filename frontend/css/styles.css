@@ -726,20 +726,23 @@ section { padding: 96px 0; }
   box-shadow: 0 14px 36px rgba(0,0,0,0.35);
 }
 .auth-broker-logo {
-  height: 64px;
+  height: 70px;
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 12px;
-  padding: 10px 16px;
+  padding: 8px 14px;
   background: #ffffff;
   border-radius: 10px;
+  overflow: hidden;
 }
 .auth-broker-logo img {
-  max-height: 40px; max-width: 120px;
+  max-height: 38px; max-width: 100%;
   width: auto; height: auto;
   object-fit: contain; display: block;
 }
-.auth-broker-logo img[data-logo="landstar"] {
-  max-height: 62px; max-width: 170px;
+.auth-broker-logo img[data-logo="landstar"],
+.auth-broker-logo img[data-logo="armstrong"],
+.auth-broker-logo img[data-logo="pls"] {
+  max-height: 52px;
 }
 .auth-broker-name {
   font-family: 'Barlow Condensed', sans-serif;
