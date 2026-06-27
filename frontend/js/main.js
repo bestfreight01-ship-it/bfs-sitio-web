@@ -305,7 +305,7 @@ function initAuthority() {
   document.getElementById('auth-brokers-grid').innerHTML = c.authBrokers.map((b) => `
     <div class="auth-broker-card">
       <div class="auth-broker-logo">
-        <img src="images/brokers/${b.logo}?v=2" alt="${b.name} logo" data-logo="${b.logo.replace('.png','')}" loading="lazy"/>
+        <img src="images/brokers/${b.logo}?v=3" alt="${b.name} logo" data-logo="${b.logo.replace('.png','')}" loading="lazy"/>
       </div>
       <div class="auth-broker-name">${b.name}</div>
     </div>`).join('');
