@@ -428,7 +428,7 @@ function setupCounters() {
 }
 
 function setupAuthorityAnimations() {
-  const wrappers = ['auth-stats-belt', 'loads-gallery-wrap', 'auth-journey-wrap', 'auth-trust-wrap', 'auth-brokers-wrap', 'auth-community-wrap', 'auth-cta-wrap'];
+  const wrappers = ['loads-gallery-wrap', 'auth-stats-belt', 'auth-journey-wrap', 'auth-trust-wrap', 'auth-brokers-wrap', 'auth-community-wrap', 'auth-cta-wrap'];
   wrappers.forEach((id) => {
     const el = document.querySelector('.' + id);
     if (!el) return;
