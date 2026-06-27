@@ -956,10 +956,31 @@ section { padding: 96px 0; }
   transition: all 0.22s; border: none; padding: 0;
 }
 .loads-dot.active { background: var(--gold); transform: scale(1.35); }
+@media (max-width: 768px) {
+  .loads-gallery-wrap { padding: 52px 0 64px; }
+  .loads-gallery-inner { gap: 32px; }
+  .loads-slider-wrap { padding: 0 32px; }
+  .loads-arrow { width: 42px; height: 42px; font-size: 17px; }
+}
 @media (max-width: 600px) {
-  .loads-gallery-wrap { padding: 60px 0 72px; }
-  .loads-slider-wrap { padding: 0 38px; }
-  .loads-arrow { width: 38px; height: 38px; font-size: 16px; }
+  /* Section padding compacto */
+  .loads-gallery-wrap { padding: 36px 0 0; }
+  .loads-gallery-inner { gap: 18px; }
+  /* Texto header: compacto, sin descripción */
+  .loads-gallery-text { padding: 0 16px; }
+  .loads-gallery-text .section-desc { display: none; }
+  .loads-counter { margin-top: 10px; font-size: 12px; }
+  /* Slider edge-to-edge: sale de los márgenes del section-inner */
+  .loads-slider-wrap {
+    padding: 0;
+    margin: 0 -24px;
+  }
+  /* Sin border-radius para look inmersivo full-bleed */
+  .loads-slider { border-radius: 0; box-shadow: none; }
+  /* Flechas vuelven a estar dentro de la imagen en mobile */
+  .loads-prev { left: 12px; }
+  .loads-next { right: 12px; }
+  .loads-arrow { width: 40px; height: 40px; font-size: 17px; }
 }
 
 /* ── Journey Page ── */
