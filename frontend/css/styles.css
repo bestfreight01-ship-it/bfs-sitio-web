@@ -876,10 +876,12 @@ section { padding: 96px 0; }
 }
 
 /* ── Loads Gallery ── */
+/* Loads gallery is now first inside #authority — needs nav clearance */
+#authority { padding-top: 0; }
 .loads-gallery-wrap {
   background: var(--white);
-  padding: 80px 0 96px;
-  border-top: 1px solid rgba(26,61,71,0.07);
+  padding: 100px 0 80px;
+  border-top: none;
 }
 .loads-gallery-inner {
   display: flex;
@@ -957,14 +959,14 @@ section { padding: 96px 0; }
 }
 .loads-dot.active { background: var(--gold); transform: scale(1.35); }
 @media (max-width: 768px) {
-  .loads-gallery-wrap { padding: 52px 0 64px; }
+  .loads-gallery-wrap { padding: 88px 0 56px; }
   .loads-gallery-inner { gap: 32px; }
   .loads-slider-wrap { padding: 0 32px; }
   .loads-arrow { width: 42px; height: 42px; font-size: 17px; }
 }
 @media (max-width: 600px) {
-  /* Section padding compacto */
-  .loads-gallery-wrap { padding: 36px 0 0; }
+  /* Section padding compacto — mantiene clearance del nav fijo */
+  .loads-gallery-wrap { padding: 84px 0 0; }
   .loads-gallery-inner { gap: 18px; }
   /* Texto header: compacto, sin descripción */
   .loads-gallery-text { padding: 0 16px; }
@@ -989,8 +991,8 @@ section { padding: 96px 0; }
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
-  padding: 140px 0 80px;
-  min-height: 420px;
+  padding: 72px 0 80px;
+  min-height: 380px;
   position: relative;
   overflow: hidden;
 }
@@ -1015,8 +1017,8 @@ section { padding: 96px 0; }
 @media (max-width: 768px) {
   .journey-page-hero {
     background-position: 65% bottom;
-    padding: 120px 0 60px;
-    min-height: 320px;
+    padding: 56px 0 56px;
+    min-height: 280px;
   }
 }
 .journey-page-title {
