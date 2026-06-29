@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-06-29 (Favicon — logo oficial BFS)
+- Agregado favicon oficial en todos los formatos requeridos para compatibilidad cross-browser, generado desde `Imagenes/Logo BFS.png` (1024×1024).
+- Archivos generados en `frontend/`: `favicon.ico` (multi-size 16/32/48px), `favicon-32x32.png`, `favicon-16x16.png`, `apple-touch-icon.png` (180×180 para iOS Safari), `favicon-192x192.png` (Android/PWA).
+- `<link>` tags añadidos en `<head>` de `index.html` y `our-journey.html`.
+
 ## 2026-06-29 (Dominio custom — bestfreightsolutions.net)
 - Comprado dominio `bestfreightsolutions.net` en Vercel y conectado al proyecto `bfs-sitio-web` en producción.
 - `bestfreightsolutions.net` redirige 308 a `www.bestfreightsolutions.net` (canónica). SSL gestionado por Vercel.
