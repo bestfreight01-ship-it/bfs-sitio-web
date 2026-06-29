@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-06-29 (Dominio custom — bestfreightsolutions.net)
+- Comprado dominio `bestfreightsolutions.net` en Vercel y conectado al proyecto `bfs-sitio-web` en producción.
+- `bestfreightsolutions.net` redirige 308 a `www.bestfreightsolutions.net` (canónica). SSL gestionado por Vercel.
+- `bfs-sitio-web.vercel.app` se mantiene activo como alias de producción.
+- `ALLOWED_ORIGINS` en Railway actualizado para incluir `https://www.bestfreightsolutions.net` y `https://bestfreightsolutions.net` — el formulario de cotización funciona desde el nuevo dominio.
+
 ## 2026-06-26 (Our Journey — fix espacio blanco mobile entre slider y hero)
 - Eliminado el espacio en blanco excesivo que aparecía en mobile entre la sección del slider (fondo blanco) y el hero "Nuestra Trayectoria" (fondo oscuro).
 - **Causa raíz**: `@media (max-width: 768px) { .loads-gallery-wrap { padding: 88px 0 56px } }` — el `56px` de `padding-bottom` creaba una franja blanca visible en dispositivos de 601-768px de ancho. Los dispositivos ≤600px ya estaban corregidos (`padding: 84px 0 0`).
